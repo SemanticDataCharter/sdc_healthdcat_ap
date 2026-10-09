@@ -1,0 +1,6 @@
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://fair.healthdata.be/dataset/d43a158e-7d13-4660-bbc3-9d3f8d5501e5>
+    healthdcatap:minTypicalAge "18"^^xsd:integer ;
+    healthdcatap:maxTypicalAge "85"^^xsd:integer .

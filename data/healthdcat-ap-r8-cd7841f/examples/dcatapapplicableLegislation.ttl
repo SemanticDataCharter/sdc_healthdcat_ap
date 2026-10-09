@@ -1,0 +1,9 @@
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix eli: <http://data.europa.eu/eli/ontology#>. 
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+<https://fair.healthdata.be/dataset/d43a158e-7d13-4660-bbc3-9d3f8d5501e5>
+	a dcat:Dataset ;
+    dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2022/868/oj> .	
+	
+<http://data.europa.eu/eli/reg/2022/868/oj>  a eli:LegalResource .

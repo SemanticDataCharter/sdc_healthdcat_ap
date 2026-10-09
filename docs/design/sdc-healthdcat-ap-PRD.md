@@ -1,6 +1,6 @@
 # sdc_healthdcat_ap PRD: one SDC model, described in HealthDCAT-AP (Release 8)
 
-**Status:** v0.1, 9 October 2026, DRAFT for Tim. The fourth projection demo of the projections track (ContentStrategy
+**Status:** v0.2, 9 October 2026: **implemented; the NHANES Participant catalog at NON_PUBLIC passes the validator's own shape set with 0 violations** (section 6; Tim: "go, publisher as the access body, use your proposed numbers"). The fourth projection demo of the projections track (ContentStrategy
 lane 5.6), its own repository rather than a phase of `sdc_dcat3_ap` (Tim, 9 October: the health market is large
 enough to want its own door). No issues are filed on the target's repositories (Tim, 9 October). Order of the track:
 CDIF, DCAT-US 3.0, DCAT-AP 3.0.1, now HealthDCAT-AP; schema.org Dataset and Croissant follow.
@@ -164,3 +164,22 @@ pin; copy Release 8's shapes, context, validator configuration with its `catalog
 `sdcdcatap`; `healthdcatap.py` adds the health layer and the table group; `cli.py`: `sdchealthdcatap write --package
 DIR [--catalog catalog.yaml] --out catalog.ttl [--jsonld catalog.jsonld]`), then `tests/` (pySHACL over the
 level's file set with the background loaded; the examples of the release as a sanity check), then the README.
+
+## 6. Results, 9 October 2026
+
+- `samples/nhanes-participant/catalog.ttl` and `catalog.jsonld` (one graph, about 1,250 triples): a Catalog with one
+  Dataset at `NON_PUBLIC`, 153 columns in its table group, coding systems SNOMED CT, LOINC and NCIT from the bindings.
+- The validator's non-public file set at cd7841f with pySHACL, the thirteen vocabularies loaded as background, SEMIC's
+  DCAT-AP shapes included: **0 violations, 12 warnings** (the recommended properties the package lacks, and the
+  Catalog's publisher outside the Corporate Bodies NAL), identical in Turtle and JSON-LD.
+- The release's own ARCA example at `PUBLIC`, the same way: passes except its language and licence type, whose
+  vocabularies are not among the thirteen we carry.
+- 7 tests. The hosted validator by hand: pending, to be recorded in the README.
+- Decisions 1 to 7 as written, with Tim's "publisher as the access body" and the proposed numbers. Changed while
+  building: the schema's `dct:conformsTo` moves from the Dataset to the Distribution (the Dataset's is closed to the
+  Technical Standard NAL); coding systems are typed `dct:Standard` as well; column names are the leaf's path (unique)
+  and the element name is the column's `dct:identifier`.
+- **Held privately:** the path-less `sh:or` property shapes and the undefined property-shape references (pySHACL
+  refuses both; Jena ignores them), the ADMS-versus-NAL double check on the Catalog's publisher, and the DCAT-AP
+  changelog and shapes shipped under the release's own name are, on their face, defects inside their scope. No issues
+  filed (Tim, 9 October).

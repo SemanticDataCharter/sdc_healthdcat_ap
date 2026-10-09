@@ -1,0 +1,7 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://healthdcat-ap.example.org/release-7/example/dataset-oncology-ehrs-2024>
+    a dcat:Dataset ;
+    healthdcatap:hasStructuredData "true"^^xsd:boolean .

@@ -1,0 +1,89 @@
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix ex: <https://healthdcat-ap.example.org/release-7/example/> .
+@prefix internalURI: <https://healthdcat-ap.example.org/release-7/internal/> .
+
+ex:dataset-oncology-ehrs-2024
+    a dcat:Dataset ;
+    healthdcatap:hasVariables internalURI:variablesGroup .
+
+internalURI:variablesGroup
+    a csvw:TableGroup ;
+    dct:title "Patient Encounter Variables Dictionary"@en ;
+    csvw:table internalURI:patientEncounterTable .
+
+internalURI:patientEncounterTable
+    a csvw:Table ;
+    dct:title "Patient Encounter Records (Minimal)"@en ;
+    dcat:keyword "Health"@en ;
+    csvw:url <https://example.org/patient-encounter.csv> ;
+    csvw:column
+        internalURI:colEncounterID,
+        internalURI:colPatientID,
+        internalURI:colVisitDate,
+        internalURI:colDiagnosisCode,
+        internalURI:colTemperature,
+        internalURI:colDiabetes,
+        internalURI:colCauseOfDeathIndicator,
+        internalURI:colCountryOfResidence .
+
+internalURI:colEncounterID
+    a csvw:Column ;
+    csvw:name "EncounterID" ;
+    csvw:title "Encounter ID"@en ;
+    csvw:datatype "integer" ;
+    dct:description "Unique encounter identifier."@en .
+
+internalURI:colPatientID
+    a csvw:Column ;
+    csvw:name "PatientID" ;
+    csvw:title "Patient ID"@en ;
+    csvw:datatype "string" ;
+    dct:description "Pseudonymized patient identifier."@en .
+
+internalURI:colVisitDate
+    a csvw:Column ;
+    csvw:name "VisitDate" ;
+    csvw:title "Visit Date"@en ;
+    csvw:datatype "dateTime" ;
+    dct:description "Date and time of the clinical visit."@en .
+
+internalURI:colDiagnosisCode
+    a csvw:Column ;
+    csvw:name "DiagnosisCode" ;
+    csvw:title "Diagnosis Code"@en ;
+    csvw:datatype "string" ;
+    dct:description "Primary diagnosis (ICD-10 code)."@en ;
+    csvw:propertyUrl <http://purl.bioontology.org/ontology/ICD10> .
+
+internalURI:colTemperature
+    a csvw:Column ;
+    csvw:name "Temperature" ;
+    csvw:title "Temperature (degC)"@en ;
+    csvw:datatype "decimal" ;
+    dct:description "Body temperature in degrees Celsius."@en .
+
+internalURI:colDiabetes
+    a csvw:Column ;
+    csvw:name "Diabetes" ;
+    csvw:title "Diabetes Diagnosis"@en ;
+    csvw:datatype "boolean" ;
+    dct:description "True if patient has a diabetes diagnosis."@en .
+
+internalURI:colCauseOfDeathIndicator
+    a csvw:Column ;
+    csvw:name "CauseOfDeathIndicator" ;
+    csvw:title "Cause of Death Indicator"@en ;
+    csvw:datatype "boolean" ;
+    dct:description "Indicates whether this encounter is related to a cause of death."@en ;
+    csvw:propertyUrl <https://terminology.health.com/glossary/CauseOfDeathIndicator> .
+
+internalURI:colCountryOfResidence
+    a csvw:Column ;
+    csvw:name "CountryOfResidence" ;
+    csvw:title "Country of Residence"@en ;
+    csvw:datatype "string" ;
+    dct:description "The patient's country of residence, using the EU country authority list."@en ;
+    csvw:propertyUrl <http://publications.europa.eu/resource/authority/country> .

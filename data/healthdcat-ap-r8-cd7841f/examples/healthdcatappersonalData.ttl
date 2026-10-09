@@ -1,0 +1,6 @@
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix dpv: <https://w3c.github.io/dpv/2.0/dpv/> .
+@prefix dpv-pd: <https://w3c.github.io/dpv/2.0/pd/> .
+
+<https://fair.healthdata.be/dataset/d43a158e-7d13-4660-bbc3-9d3f8d5501e5>
+    dpv:hasPersonalData dpv-pd:Gender, dpv-pd:Age, dpv-pd:Location, dpv-pd:Nationality, dpv-pd:Education, dpv-pd:HealthRecord .

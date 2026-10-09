@@ -1,0 +1,1603 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix cv: <http://data.europa.eu/m8g/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geodcatap: <http://data.europa.eu/930/> .
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://semanticdatacharter.com/catalogs/governed-health-data-records> a dcat:Catalog ;
+    dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj> ;
+    dct:description "Collections of Governed Data Records, one per published Semantic Data Charter model, each described by the immutable schema its records conform to, for the HealthData@EU catalogue."@en ;
+    dct:issued "2026-09-26"^^xsd:date ;
+    dct:language <http://publications.europa.eu/resource/authority/language/ENG> ;
+    dct:modified "2026-09-26"^^xsd:date ;
+    dct:publisher <https://axius-sdc.com> ;
+    dct:title "Semantic Data Charter governed health data records"@en ;
+    dcat:dataset <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g> ;
+    dcat:themeTaxonomy <http://publications.europa.eu/resource/authority/data-theme> ;
+    foaf:homepage <https://semanticdatacharter.com> .
+
+<http://publications.europa.eu/resource/authority/access-right> a skos:ConceptScheme ;
+    dct:title "Access Rights Named Authority List"@en .
+
+<http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC> a dct:RightsStatement,
+        skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/access-right> ;
+    skos:prefLabel "Non Public"@en .
+
+<http://publications.europa.eu/resource/authority/data-theme/HEAL> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/data-theme> ;
+    skos:prefLabel "Health"@en .
+
+<http://publications.europa.eu/resource/authority/dataset-type> a skos:ConceptScheme ;
+    dct:title "Dataset Type Named Authority List"@en .
+
+<http://publications.europa.eu/resource/authority/dataset-type/STATISTICAL> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/dataset-type> ;
+    skos:prefLabel "Statistical data"@en .
+
+<http://publications.europa.eu/resource/authority/file-type> a skos:ConceptScheme ;
+    dct:title "File Type Named Authority List"@en .
+
+<http://publications.europa.eu/resource/authority/file-type/XML> a dct:MediaTypeOrExtent ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/file-type> .
+
+<http://publications.europa.eu/resource/authority/language> a skos:ConceptScheme ;
+    dct:title "Languages Named Authority List"@en .
+
+<http://publications.europa.eu/resource/authority/planned-availability> a skos:ConceptScheme ;
+    dct:title "Planned Availability Named Authority List"@en .
+
+<http://publications.europa.eu/resource/authority/planned-availability/AVAILABLE> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/planned-availability> ;
+    skos:prefLabel "Available"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system/LOINC> a dct:Standard,
+        skos:Concept ;
+    skos:inScheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system> ;
+    skos:prefLabel "LOINC"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system/NCIT> a dct:Standard,
+        skos:Concept ;
+    skos:inScheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system> ;
+    skos:prefLabel "NCI Thesaurus"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system/SNOMED-CT> a dct:Standard,
+        skos:Concept ;
+    skos:inScheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system> ;
+    skos:prefLabel "SNOMED CT"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/health-theme> a skos:ConceptScheme ;
+    dct:title "Health Theme NAL"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/health-theme/NONCOMMUNICABLE_DISEASES> a skos:Concept ;
+    skos:inScheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/health-theme> ;
+    skos:prefLabel "Noncommunicable diseases, metabolic & cardiopulmonary"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/healthcategories> a skos:ConceptScheme ;
+    dct:title "Health Categories (EHDS Art. 51) NAL"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/healthcategories/RQSH> a skos:Concept ;
+    skos:inScheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/healthcategories> ;
+    skos:prefLabel "Data from research cohorts, questionnaires and surveys related to health"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type> a skos:ConceptScheme ;
+    dct:title "Health Publisher Types NAL"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type/private-company> a skos:Concept ;
+    skos:inScheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type> ;
+    skos:prefLabel "Private company"@en .
+
+<https://sdcstudio.axius-sdc.com/api/v1/catalog/dm/xy8upneajsb8vdcmnve01g6g/> a foaf:Document ;
+    dct:title "NHANES Participant in the public catalog"@en .
+
+<https://sdcstudio.axius-sdc.com/dmlib/dm-xy8upneajsb8vdcmnve01g6g.xsd> a foaf:Document ;
+    dct:conformsTo <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd> ;
+    dct:description "The immutable schema every NHANES Participant record is validated against: 153 variables with their definitions, datatypes, units, enumerated values and codes, and the sixteen typed reasons a value may be missing. Current version SHA-256 0df45878b0db1c1515e860a4b9993c5f086ffaaebc4c16aaae2092e1da3d3b3b."@en ;
+    dct:format <http://publications.europa.eu/resource/authority/file-type/XML> ;
+    dct:title "SDC4 schema dm-xy8upneajsb8vdcmnve01g6g: the data dictionary of NHANES Participant"@en .
+
+<https://semanticdatacharter.com> a foaf:Document ;
+    dct:title "Semantic Data Charter governed health data records"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g> a dcat:Dataset ;
+    geodcatap:custodian <https://axius-sdc.com> ;
+    dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj> ;
+    healthdcatap:hasCodeValues "Enumerated values and concepts carry codes from LOINC, NCI Thesaurus, SNOMED CT as skos:exactMatch bindings in the schema."@en ;
+    healthdcatap:hasCodingSystem <https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system/LOINC>,
+        <https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system/NCIT>,
+        <https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system/SNOMED-CT> ;
+    healthdcatap:hasStructuredData true ;
+    healthdcatap:hasVariables <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#variables> ;
+    healthdcatap:hdab <https://axius-sdc.com> ;
+    healthdcatap:healthCategory <https://hdeu-dcat.data.health.europa.eu/resource/authority/healthcategories/RQSH> ;
+    healthdcatap:healthTheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/health-theme/NONCOMMUNICABLE_DISEASES> ;
+    healthdcatap:maxTypicalAge "80"^^xsd:nonNegativeInteger ;
+    healthdcatap:minTypicalAge "0"^^xsd:nonNegativeInteger ;
+    healthdcatap:numberOfRecords "9254"^^xsd:nonNegativeInteger ;
+    healthdcatap:numberOfUniqueIndividuals "9254"^^xsd:nonNegativeInteger ;
+    healthdcatap:populationCoverage "Participants of the National Health and Nutrition Examination Survey 2017-2018 (CDC), civilian noninstitutionalized population of the United States, all ages."@en ;
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC> ;
+    dct:creator [ a foaf:Agent ;
+            foaf:name "Timothy Cook" ] ;
+    dct:description "SDC4 data model for National Health and Nutrition Examination Survey (nhanes_blood_pressure) — FAIR Data Demo. Each record is a governed data record conforming to the Semantic Data Charter model NHANES Participant (dm-xy8upneajsb8vdcmnve01g6g), published 2026-09-26. The schema is immutable and defines every variable's name, definition, datatype, units and permitted values; it is cited by URL and SHA-256 as the standard the records conform to and as the page that documents them."@en ;
+    dct:identifier "dm-xy8upneajsb8vdcmnve01g6g" ;
+    dct:issued "2026-09-26"^^xsd:date ;
+    dct:language <http://publications.europa.eu/resource/authority/language/ENG> ;
+    dct:license <http://creativecommons.org/licenses/by/3.0/> ;
+    dct:modified "2026-09-26"^^xsd:date ;
+    dct:provenance [ a dct:ProvenanceStatement ;
+            rdfs:label "A published Semantic Data Charter model never changes; a revision is a new model naming the one it revised (prov:wasRevisionOf). See https://semanticdatacharter.com/permanence.html."@en ] ;
+    dct:publisher <https://axius-sdc.com> ;
+    dct:title "NHANES Participant governed data records"@en ;
+    dct:type <http://publications.europa.eu/resource/authority/dataset-type/STATISTICAL> ;
+    adms:identifier [ a adms:Identifier ;
+            skos:notation "dm-xy8upneajsb8vdcmnve01g6g" ;
+            adms:schemaAgency "Semantic Data Charter" ] ;
+    dcat:contactPoint [ a vcard:Kind ;
+            vcard:fn "Axius SDC, Inc. HealthDCAT-AP contact" ;
+            vcard:hasEmail <mailto:contact@axius-sdc.com> ] ;
+    dcat:distribution <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#distribution> ;
+    dcat:keyword "FAIR Data Demo"@en,
+        "SDC4"@en,
+        "Semantic Data Charter"@en,
+        "governed data record"@en ;
+    dcat:landingPage <https://sdcstudio.axius-sdc.com/api/v1/catalog/dm/xy8upneajsb8vdcmnve01g6g/> ;
+    dcat:theme <http://publications.europa.eu/resource/authority/data-theme/HEAL> ;
+    dcat:version "0df45878b0db1c1515e860a4b9993c5f086ffaaebc4c16aaae2092e1da3d3b3b" ;
+    dqv:hasQualityAnnotation [ a dqv:QualityCertificate ;
+            oa:hasBody <https://sdcstudio.axius-sdc.com/dmlib/dm-xy8upneajsb8vdcmnve01g6g.xsd?sha256=0df45878b0db1c1515e860a4b9993c5f086ffaaebc4c16aaae2092e1da3d3b3b> ;
+            oa:motivatedBy dqv:qualityAssessment ] ;
+    foaf:page <https://sdcstudio.axius-sdc.com/dmlib/dm-xy8upneajsb8vdcmnve01g6g.xsd> ;
+    dpv:hasLegalBasis [ a dpv:LegalBasis ;
+            dct:description "Public-use survey data released by the CDC National Center for Health Statistics, re-expressed as governed data records by the FAIR Data Demo; secondary use under the terms of the source release."@en ] ;
+    dpv:hasPersonalData <https://w3id.org/dpv/dpv-pd#Age>,
+        <https://w3id.org/dpv/dpv-pd#Gender>,
+        <https://w3id.org/dpv/dpv-pd#HealthRecord> ;
+    dpv:hasPurpose [ a dpv:Purpose ;
+            dct:description "Demonstration of governed data records for secondary-use research on population health, blood pressure, laboratory results and health behaviour."@en ] .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/audit-agent-reference> a csvw:Column ;
+    dct:description "The acting agent (FHIR AuditEvent.agent.who). Holds the IRI of the referenced thing."@en ;
+    dct:identifier "ms-dkc2ccj5te35z9gd4bu1blcq" ;
+    csvw:datatype "string" ;
+    csvw:name "audit-event/audit-agent-reference" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/audit-agent-reference> ;
+    csvw:title "Audit Agent Reference"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/audit-entity-reference> a csvw:Column ;
+    dct:description "The entity the event concerns (FHIR AuditEvent.entity.what). Holds the IRI of the referenced thing."@en ;
+    dct:identifier "ms-gcjyjrnp0wsfoelcp4m05c67" ;
+    csvw:datatype "string" ;
+    csvw:name "audit-event/audit-entity-reference" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/audit-entity-reference> ;
+    csvw:title "Audit Entity Reference"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/audit-event-action> a csvw:Column ;
+    dct:description "The operation performed in a logged access event (FHIR AuditEvent.action). Read and Execute change no state and are audit facts, not workflow moves."@en ;
+    dct:identifier "ms-ce1c8sydkov8bkv4dgdmwe5x" ;
+    csvw:datatype "token" ;
+    csvw:name "audit-event/audit-event-action" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/audit-event-action> ;
+    csvw:title "Audit Event Action"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/audit-event-identifier> a csvw:Column ;
+    dct:description "The identifier of the audit event."@en ;
+    dct:identifier "ms-fjhgr5fyqxt2crmg2cb5c513" ;
+    csvw:datatype "string" ;
+    csvw:name "audit-event/audit-event-identifier" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/audit-event-identifier> ;
+    csvw:title "Audit Event Identifier"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/audit-event-outcome> a csvw:Column ;
+    dct:description "The result of an audited event (FHIR AuditEvent.outcome)."@en ;
+    dct:identifier "ms-rpz1czz06jhpahmfz30rblvp" ;
+    csvw:datatype "token" ;
+    csvw:name "audit-event/audit-event-outcome" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/audit-event-outcome> ;
+    csvw:title "Audit Event Outcome"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/audit-recorded-at> a csvw:Column ;
+    dct:description "When the audit event was recorded (FHIR AuditEvent.recorded)."@en ;
+    dct:identifier "ms-uwiosm2q9ym3ewr4de910s70" ;
+    csvw:datatype "dateTime" ;
+    csvw:name "audit-event/audit-recorded-at" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/audit-recorded-at> ;
+    csvw:title "Audit Recorded At"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/confidentiality> a csvw:Column ;
+    dct:description "The level of protection the information requires (HL7 v3 Confidentiality). At assembly the value populates a component's act tag."@en ;
+    dct:identifier "ms-vbctgmdcwps5b3r3l6sboa6y" ;
+    csvw:datatype "token" ;
+    csvw:name "audit-event/confidentiality" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/confidentiality> ;
+    csvw:title "Confidentiality"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/data-subject-reference> a csvw:Column ;
+    dct:description "The data subject or patient the event concerns (FHIR AuditEvent.patient; SDC DM.subject). Holds the IRI of the referenced thing."@en ;
+    dct:identifier "ms-sndpbhm3xbd6qtbyxmvh3i0e" ;
+    csvw:datatype "string" ;
+    csvw:name "audit-event/data-subject-reference" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/data-subject-reference> ;
+    csvw:title "Data Subject Reference"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/on-behalf-of-reference> a csvw:Column ;
+    dct:description "The party on whose behalf the agent acted (FHIR agent.onBehalfOf; prov:actedOnBehalfOf). Holds the IRI of the referenced thing."@en ;
+    dct:identifier "ms-nf1air1zbj8v9w66jozdxmyl" ;
+    csvw:datatype "string" ;
+    csvw:name "audit-event/on-behalf-of-reference" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/on-behalf-of-reference> ;
+    csvw:title "On Behalf Of Reference"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/provenance-agent-type> a csvw:Column ;
+    dct:description "The functional role of an agent in an activity (FHIR Provenance.agent.type)."@en ;
+    dct:identifier "ms-jujsdur1igws8orw6tvvlqco" ;
+    csvw:datatype "token" ;
+    csvw:name "audit-event/provenance-agent-type" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/provenance-agent-type> ;
+    csvw:title "Provenance Agent Type"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/purpose-of-use> a csvw:Column ;
+    dct:description "Why the information was used (HL7 v3 ActReason purpose of use). Activity context, not an access-control tag."@en ;
+    dct:identifier "ms-d1evlz8yvdlwt6ia9fjq4pgj" ;
+    csvw:datatype "token" ;
+    csvw:name "audit-event/purpose-of-use" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/purpose-of-use> ;
+    csvw:title "Purpose of Use"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/system-identifier> a csvw:Column ;
+    dct:description "The system that handled the item (FHIR AuditEvent.source.observer; SDC AuditType.system-id)."@en ;
+    dct:identifier "ms-h3kdbvdtyalpvik97saaf0an" ;
+    csvw:datatype "string" ;
+    csvw:name "audit-event/system-identifier" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/system-identifier> ;
+    csvw:title "System Identifier"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/system-location-name> a csvw:Column ;
+    dct:description "The site or facility that handled the item (FHIR AuditEvent.agent.location; prov:atLocation)."@en ;
+    dct:identifier "ms-ujir739mf1g8ajeczs9nzh9m" ;
+    csvw:datatype "string" ;
+    csvw:name "audit-event/system-location-name" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/system-location-name> ;
+    csvw:title "System Location Name"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/arm-selected-bpaarm> a csvw:Column ;
+    dct:description "The arm the blood pressure was measured on (BPAARM)."@en ;
+    dct:identifier "ms-f98c865cpjza5wwh3odh9nv3" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/arm-selected-bpaarm" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-arm-selected> ;
+    csvw:title "Arm Selected (BPAARM)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-1/blood-pressure/body-site-snomed-ct/body-site-code-snomed-ct> a csvw:Column ;
+    dct:description "The SNOMED CT code for the body site the observation was made on. FHIR Observation.bodySite, coded in http://snomed.info/sct."@en ;
+    dct:identifier "ms-vi7yvq0b8nler3g6alaamrzm" ;
+    csvw:datatype "string" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-1/blood-pressure/body-site-snomed-ct/body-site-code-snomed-ct" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/body-site-code> ;
+    csvw:title "Body Site Code (SNOMED CT)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-1/blood-pressure/body-site-snomed-ct/code-display-text> a csvw:Column ;
+    dct:description "The human-readable display of a coded value, as recorded with the code (FHIR Coding.display)."@en ;
+    dct:identifier "ms-eo5tlfr0576ypknys5alvcn0" ;
+    csvw:datatype "string" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-1/blood-pressure/body-site-snomed-ct/code-display-text" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/code-display-text> ;
+    csvw:title "Code Display Text"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-1/blood-pressure/body-site-snomed-ct/code-system-snomed-ct> a csvw:Column ;
+    dct:description "The code system of a coded value, fixed: SNOMED CT (http://snomed.info/sct). FHIR Coding.system."@en ;
+    dct:identifier "ms-q75pzzv36or6dxgjrrbvmun5" ;
+    csvw:datatype "anyURI" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-1/blood-pressure/body-site-snomed-ct/code-system-snomed-ct" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/system-snomed> ;
+    csvw:title "Code System: SNOMED CT"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-1/blood-pressure/diastolic-blood-pressure> a csvw:Column ;
+    dct:description "Diastolic Blood Pressure (LOINC 8462-4), in the Default units by slot. FHIR Observation.valueQuantity."@en ;
+    dct:identifier "ms-s3qzwxxz9b42lcd2wryok8jd" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-1/blood-pressure/diastolic-blood-pressure" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/diastolic-blood-pressure> ;
+    csvw:title "Diastolic Blood Pressure"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-1/blood-pressure/observation-date-time> a csvw:Column ;
+    dct:description "The clinically relevant time of the observation. FHIR Observation.effectiveDateTime."@en ;
+    dct:identifier "ms-dkyyj01tksb7h7akq2w7moum" ;
+    csvw:datatype "dateTime" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-1/blood-pressure/observation-date-time" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/observation-datetime> ;
+    csvw:title "Observation Date Time"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-1/blood-pressure/observation-status> a csvw:Column ;
+    dct:description "The status of the observation result. FHIR Observation.status; ObservationStatus, version 4.0.1."@en ;
+    dct:identifier "ms-q9vmn1cvdclgr757aer5v1rg" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-1/blood-pressure/observation-status" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/observation-status> ;
+    csvw:title "Observation Status"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-1/blood-pressure/systolic-blood-pressure> a csvw:Column ;
+    dct:description "Systolic Blood Pressure (LOINC 8480-6), in the Default units by slot. FHIR Observation.valueQuantity."@en ;
+    dct:identifier "ms-r1ve12xphsb5hu2yjmhksw5h" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-1/blood-pressure/systolic-blood-pressure" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/systolic-blood-pressure> ;
+    csvw:title "Systolic Blood Pressure"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-2/blood-pressure/body-site-snomed-ct/body-site-code-snomed-ct> a csvw:Column ;
+    dct:description "The SNOMED CT code for the body site the observation was made on. FHIR Observation.bodySite, coded in http://snomed.info/sct."@en ;
+    dct:identifier "ms-vi7yvq0b8nler3g6alaamrzm" ;
+    csvw:datatype "string" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-2/blood-pressure/body-site-snomed-ct/body-site-code-snomed-ct" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/body-site-code> ;
+    csvw:title "Body Site Code (SNOMED CT)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-2/blood-pressure/body-site-snomed-ct/code-display-text> a csvw:Column ;
+    dct:description "The human-readable display of a coded value, as recorded with the code (FHIR Coding.display)."@en ;
+    dct:identifier "ms-eo5tlfr0576ypknys5alvcn0" ;
+    csvw:datatype "string" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-2/blood-pressure/body-site-snomed-ct/code-display-text" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/code-display-text> ;
+    csvw:title "Code Display Text"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-2/blood-pressure/body-site-snomed-ct/code-system-snomed-ct> a csvw:Column ;
+    dct:description "The code system of a coded value, fixed: SNOMED CT (http://snomed.info/sct). FHIR Coding.system."@en ;
+    dct:identifier "ms-q75pzzv36or6dxgjrrbvmun5" ;
+    csvw:datatype "anyURI" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-2/blood-pressure/body-site-snomed-ct/code-system-snomed-ct" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/system-snomed> ;
+    csvw:title "Code System: SNOMED CT"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-2/blood-pressure/diastolic-blood-pressure> a csvw:Column ;
+    dct:description "Diastolic Blood Pressure (LOINC 8462-4), in the Default units by slot. FHIR Observation.valueQuantity."@en ;
+    dct:identifier "ms-s3qzwxxz9b42lcd2wryok8jd" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-2/blood-pressure/diastolic-blood-pressure" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/diastolic-blood-pressure> ;
+    csvw:title "Diastolic Blood Pressure"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-2/blood-pressure/observation-date-time> a csvw:Column ;
+    dct:description "The clinically relevant time of the observation. FHIR Observation.effectiveDateTime."@en ;
+    dct:identifier "ms-dkyyj01tksb7h7akq2w7moum" ;
+    csvw:datatype "dateTime" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-2/blood-pressure/observation-date-time" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/observation-datetime> ;
+    csvw:title "Observation Date Time"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-2/blood-pressure/observation-status> a csvw:Column ;
+    dct:description "The status of the observation result. FHIR Observation.status; ObservationStatus, version 4.0.1."@en ;
+    dct:identifier "ms-q9vmn1cvdclgr757aer5v1rg" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-2/blood-pressure/observation-status" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/observation-status> ;
+    csvw:title "Observation Status"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-2/blood-pressure/systolic-blood-pressure> a csvw:Column ;
+    dct:description "Systolic Blood Pressure (LOINC 8480-6), in the Default units by slot. FHIR Observation.valueQuantity."@en ;
+    dct:identifier "ms-r1ve12xphsb5hu2yjmhksw5h" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-2/blood-pressure/systolic-blood-pressure" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/systolic-blood-pressure> ;
+    csvw:title "Systolic Blood Pressure"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-3/blood-pressure/body-site-snomed-ct/body-site-code-snomed-ct> a csvw:Column ;
+    dct:description "The SNOMED CT code for the body site the observation was made on. FHIR Observation.bodySite, coded in http://snomed.info/sct."@en ;
+    dct:identifier "ms-vi7yvq0b8nler3g6alaamrzm" ;
+    csvw:datatype "string" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-3/blood-pressure/body-site-snomed-ct/body-site-code-snomed-ct" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/body-site-code> ;
+    csvw:title "Body Site Code (SNOMED CT)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-3/blood-pressure/body-site-snomed-ct/code-display-text> a csvw:Column ;
+    dct:description "The human-readable display of a coded value, as recorded with the code (FHIR Coding.display)."@en ;
+    dct:identifier "ms-eo5tlfr0576ypknys5alvcn0" ;
+    csvw:datatype "string" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-3/blood-pressure/body-site-snomed-ct/code-display-text" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/code-display-text> ;
+    csvw:title "Code Display Text"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-3/blood-pressure/body-site-snomed-ct/code-system-snomed-ct> a csvw:Column ;
+    dct:description "The code system of a coded value, fixed: SNOMED CT (http://snomed.info/sct). FHIR Coding.system."@en ;
+    dct:identifier "ms-q75pzzv36or6dxgjrrbvmun5" ;
+    csvw:datatype "anyURI" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-3/blood-pressure/body-site-snomed-ct/code-system-snomed-ct" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/system-snomed> ;
+    csvw:title "Code System: SNOMED CT"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-3/blood-pressure/diastolic-blood-pressure> a csvw:Column ;
+    dct:description "Diastolic Blood Pressure (LOINC 8462-4), in the Default units by slot. FHIR Observation.valueQuantity."@en ;
+    dct:identifier "ms-s3qzwxxz9b42lcd2wryok8jd" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-3/blood-pressure/diastolic-blood-pressure" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/diastolic-blood-pressure> ;
+    csvw:title "Diastolic Blood Pressure"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-3/blood-pressure/observation-date-time> a csvw:Column ;
+    dct:description "The clinically relevant time of the observation. FHIR Observation.effectiveDateTime."@en ;
+    dct:identifier "ms-dkyyj01tksb7h7akq2w7moum" ;
+    csvw:datatype "dateTime" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-3/blood-pressure/observation-date-time" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/observation-datetime> ;
+    csvw:title "Observation Date Time"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-3/blood-pressure/observation-status> a csvw:Column ;
+    dct:description "The status of the observation result. FHIR Observation.status; ObservationStatus, version 4.0.1."@en ;
+    dct:identifier "ms-q9vmn1cvdclgr757aer5v1rg" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-3/blood-pressure/observation-status" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/observation-status> ;
+    csvw:title "Observation Status"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-3/blood-pressure/systolic-blood-pressure> a csvw:Column ;
+    dct:description "Systolic Blood Pressure (LOINC 8480-6), in the Default units by slot. FHIR Observation.valueQuantity."@en ;
+    dct:identifier "ms-r1ve12xphsb5hu2yjmhksw5h" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-3/blood-pressure/systolic-blood-pressure" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/systolic-blood-pressure> ;
+    csvw:title "Systolic Blood Pressure"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/coded-cuff-size-bpacsz> a csvw:Column ;
+    dct:description "The blood pressure cuff size used (BPACSZ)."@en ;
+    dct:identifier "ms-qv6ytjstrquvfr20cyfjqq2d" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/coded-cuff-size-bpacsz" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-coded-cuff-size> ;
+    csvw:title "Coded Cuff Size (BPACSZ)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/heart-rate> a csvw:Column ;
+    dct:description "Heart Rate (LOINC 8867-4), in the Default units by slot. FHIR Observation.valueQuantity."@en ;
+    dct:identifier "ms-oy0jwif5pi86xtimzxzhapvu" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/heart-rate" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fhir/heart-rate> ;
+    csvw:title "Heart Rate"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/maximum-inflation-level-bpxml1> a csvw:Column ;
+    dct:description "The maximum inflation level used, in mm Hg (BPXML1)."@en ;
+    dct:identifier "ms-ujpg1m8po18ynniqpwhltxld" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/maximum-inflation-level-bpxml1" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-maximum-inflation-level> ;
+    csvw:title "Maximum Inflation Level (BPXML1)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/pulse-regular-or-irregular-bpxpuls> a csvw:Column ;
+    dct:description "Whether the pulse was regular or irregular (BPXPULS)."@en ;
+    dct:identifier "ms-uy2fly38y0ghl10xgo4e7svh" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-blood-pressure/pulse-regular-or-irregular-bpxpuls" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-pulse-regularity> ;
+    csvw:title "Pulse Regular or Irregular (BPXPULS)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/administrative-gender> a csvw:Column ;
+    dct:description "The gender a person is recorded as for administrative purposes. Not clinical or biological sex; see Sex (Recorded)."@en ;
+    dct:identifier "ms-gxzbm758mhdz51xd4bawlfhh" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-demographics/administrative-gender" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/default/administrative-gender> ;
+    csvw:title "Administrative Gender"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/age> a csvw:Column ;
+    dct:description "The number of years (if more than 24 months old) or months (if 24 months or younger) that the person has been alive. Question text: What is the person's age (in years if more than 24 months old or months if 24 months or younger)? NIH CDE Repository, steward NIMHD, tinyId PDjBiGXjO, NIH endorsed."@en ;
+    dct:identifier "ms-wuvdeiwoe5bna7nlhcl1c4h9" ;
+    csvw:datatype "integer" ;
+    csvw:name "nhanes-participant/nhanes-demographics/age" ;
+    csvw:propertyUrl <https://semanticdatacharter.com/ns/sdc4/mc-wuvdeiwoe5bna7nlhcl1c4h9> ;
+    csvw:title "Age"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/age-in-months-at-screening-ridagemn> a csvw:Column ;
+    dct:description "Age in months at screening, reported for participants aged 0 to 24 months (RIDAGEMN)."@en ;
+    dct:identifier "ms-qg7or0c34grde4gprzwifukh" ;
+    csvw:datatype "integer" ;
+    csvw:name "nhanes-participant/nhanes-demographics/age-in-months-at-screening-ridagemn" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-age-in-months-at-screening> ;
+    csvw:title "Age in Months at Screening (RIDAGEMN)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/annual-household-income-indhhin2> a csvw:Column ;
+    dct:description "Annual household income in the agency's ranges (INDHHIN2). Not harmonized: the NHANES, BRFSS and NIH CDE income ranges do not nest, so each study keeps its own."@en ;
+    dct:identifier "ms-ex88a2s3ys6hm5pvv77j0q2u" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-demographics/annual-household-income-indhhin2" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-annual-household-income> ;
+    csvw:title "Annual Household Income (INDHHIN2)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/are-you-pregnant-now> a csvw:Column ;
+    dct:description "A textual description of the person's current pregnancy status. Also known as: Current Pregnancy Indicator. NIH CDE Repository, steward Project 5, tinyId LiUWCWluP, NIH endorsed."@en ;
+    dct:identifier "ms-owjt9bcgisxfbco8qnddo2fq" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-demographics/are-you-pregnant-now" ;
+    csvw:propertyUrl <https://semanticdatacharter.com/ns/sdc4/mc-owjt9bcgisxfbco8qnddo2fq> ;
+    csvw:title "Are you pregnant now?"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/citizenship-status-dmdcitzn> a csvw:Column ;
+    dct:description "Citizenship status (DMDCITZN)."@en ;
+    dct:identifier "ms-m67ncwhc9s1j36f9w9qsrxfx" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-demographics/citizenship-status-dmdcitzn" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-citizenship-status> ;
+    csvw:title "Citizenship Status (DMDCITZN)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/country-of-birth-dmdborn4> a csvw:Column ;
+    dct:description "Whether the participant was born in the 50 US states or Washington, DC, or elsewhere (DMDBORN4)."@en ;
+    dct:identifier "ms-nwsj84veb6u9g1v0h2a3a793" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-demographics/country-of-birth-dmdborn4" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-country-of-birth> ;
+    csvw:title "Country of Birth (DMDBORN4)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/current-educational-attainment> a csvw:Column ;
+    dct:description "A textual description of the grade or highest level of education attained by a human being. Question text: What is the highest grade or level of school you have completed or the highest degree you have received? NIH CDE Repository, steward Project 5, tinyId Co2d1RyYS3, NIH endorsed."@en ;
+    dct:identifier "ms-xtbtk7ro6s9247bcwt4ak4h1" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-demographics/current-educational-attainment" ;
+    csvw:propertyUrl <https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1> ;
+    csvw:title "Current Educational Attainment"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/education-level-adults-20-dmdeduc2> a csvw:Column ;
+    dct:description "The highest grade or level of school completed, adults 20 and over (DMDEDUC2). Kept beside the NIH CDE Current Educational Attainment it is mapped to."@en ;
+    dct:identifier "ms-fqjd2lvp9jamdpf0f3kpkwnp" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-demographics/education-level-adults-20-dmdeduc2" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-education-level-adults> ;
+    csvw:title "Education Level - Adults 20+ (DMDEDUC2)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/gender-riagendr> a csvw:Column ;
+    dct:description "The participant's gender as NHANES codes it (RIAGENDR). Kept beside the Default administrative gender it is mapped to."@en ;
+    dct:identifier "ms-sigmhjzuw16w0k8op92lk9sd" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-demographics/gender-riagendr" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-gender-code> ;
+    csvw:title "Gender (RIAGENDR)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/marital-status> a csvw:Column ;
+    dct:description "A demographic parameter indicating a person's current conjugal status. Question text: What is your current marital status? NIH CDE Repository, steward NIMHD, tinyId C6SezX_mKG, NIH endorsed."@en ;
+    dct:identifier "ms-qsetd453kk9own8co1wmc5cz" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-demographics/marital-status" ;
+    csvw:propertyUrl <https://semanticdatacharter.com/ns/sdc4/mc-qsetd453kk9own8co1wmc5cz> ;
+    csvw:title "Marital Status"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/marital-status-dmdmartl> a csvw:Column ;
+    dct:description "Marital status as NHANES codes it (DMDMARTL). Kept beside the NIH CDE Marital Status it is mapped to."@en ;
+    dct:identifier "ms-i3uys2dmi257jkdzavsst5az" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-demographics/marital-status-dmdmartl" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-marital-status> ;
+    csvw:title "Marital Status (DMDMARTL)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/pregnancy-status-at-exam-ridexprg> a csvw:Column ;
+    dct:description "Pregnancy status at the examination, females 20-44 (RIDEXPRG). Kept beside the NIH CDE pregnancy question it is mapped to."@en ;
+    dct:identifier "ms-r0j6yo8zvo4q8x0ovdr6j9yz" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-demographics/pregnancy-status-at-exam-ridexprg" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-pregnancy-status-at-exam> ;
+    csvw:title "Pregnancy Status at Exam (RIDEXPRG)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/race-ethnicity-self-identification> a csvw:Column ;
+    dct:description "A textual description of a person's race. C17049 |The ethnicity of a person. C16564 | An individual's perspective or subjective interpretation of an event or information. C74528 Question text: Please select the racial/ethnic category or categories with which you most closely identify. Select all that apply. NIH CDE Repository, steward NIMHD, tinyId LakF0YkywC, NIH endorsed."@en ;
+    dct:identifier "ms-u5tietya3u56hbz2kos06ai7" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-demographics/race-ethnicity-self-identification" ;
+    csvw:propertyUrl <https://semanticdatacharter.com/ns/sdc4/mc-u5tietya3u56hbz2kos06ai7> ;
+    csvw:title "Race/Ethnicity Self-Identification"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/race-hispanic-origin-with-nh-asian-ridreth3> a csvw:Column ;
+    dct:description "Race and Hispanic origin as NHANES codes it (RIDRETH3). Kept beside the NIH CDE Race/Ethnicity Self-Identification it is mapped to; the mapping is in the generator and Other Race including multi-racial has no CDE value."@en ;
+    dct:identifier "ms-hs44ipuqgvc3azbt3mirxtsz" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-demographics/race-hispanic-origin-with-nh-asian-ridreth3" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-race-hispanic-origin> ;
+    csvw:title "Race/Hispanic Origin with NH Asian (RIDRETH3)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/ratio-of-family-income-to-poverty-indfmpir> a csvw:Column ;
+    dct:description "The ratio of family income to the poverty guideline (INDFMPIR; 5 means 5 or more)."@en ;
+    dct:identifier "ms-dwd4pk56w0pjchsyzl81fzya" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-demographics/ratio-of-family-income-to-poverty-indfmpir" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-family-income-poverty-ratio> ;
+    csvw:title "Ratio of Family Income to Poverty (INDFMPIR)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/total-number-of-people-in-the-household-dmdhhsiz> a csvw:Column ;
+    dct:description "Total number of people in the household (DMDHHSIZ; 7 means 7 or more)."@en ;
+    dct:identifier "ms-qbp08a1gscple2aiuiwyfz2s" ;
+    csvw:datatype "integer" ;
+    csvw:name "nhanes-participant/nhanes-demographics/total-number-of-people-in-the-household-dmdhhsiz" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-household-size> ;
+    csvw:title "Total Number of People in the Household (DMDHHSIZ)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/veteran-status> a csvw:Column ;
+    dct:description "Whether the person has ever served on active duty in the United States Armed Forces (NHANES DMQMILIZ; BRFSS VETERAN3)."@en ;
+    dct:identifier "ms-eimlsgbawhm8aa4i6gbdrja0" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-demographics/veteran-status" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/veteran-status> ;
+    csvw:title "Veteran Status"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/basophils-number> a csvw:Column ;
+    dct:description "Basophils Number (LBDBANO, LOINC 704-7)."@en ;
+    dct:identifier "ms-ncskx5im3if41mqo9pm8ydx0" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/basophils-number" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-basophil-count> ;
+    csvw:title "Basophils Number"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/basophils-percent> a csvw:Column ;
+    dct:description "Basophils Percent (LBXBAPCT, LOINC 706-2)."@en ;
+    dct:identifier "ms-wcasfq02d9hukvn2bar4r67d" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/basophils-percent" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-basophil-percent> ;
+    csvw:title "Basophils Percent"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/eosinophils-number> a csvw:Column ;
+    dct:description "Eosinophils Number (LBDEONO, LOINC 711-2)."@en ;
+    dct:identifier "ms-f49ynlsmh5zex122r4i2jeqg" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/eosinophils-number" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-eosinophil-count> ;
+    csvw:title "Eosinophils Number"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/eosinophils-percent> a csvw:Column ;
+    dct:description "Eosinophils Percent (LBXEOPCT, LOINC 713-8)."@en ;
+    dct:identifier "ms-zsikpg1vrhzoydvk26gpg6nb" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/eosinophils-percent" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-eosinophil-percent> ;
+    csvw:title "Eosinophils Percent"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/hematocrit> a csvw:Column ;
+    dct:description "Hematocrit (LBXHCT, LOINC 4544-3)."@en ;
+    dct:identifier "ms-kn0gsgklvqcbbz2f20dg1koy" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/hematocrit" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-hematocrit> ;
+    csvw:title "Hematocrit"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/hemoglobin> a csvw:Column ;
+    dct:description "Hemoglobin (LBXHGB, LOINC 718-7)."@en ;
+    dct:identifier "ms-z9jeqoghnlvlyy8sgxk5lwne" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/hemoglobin" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-hemoglobin> ;
+    csvw:title "Hemoglobin"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/lymphocyte-number> a csvw:Column ;
+    dct:description "Lymphocyte Number (LBDLYMNO, LOINC 731-0)."@en ;
+    dct:identifier "ms-cdzb3xhl10wivkk305sm09wf" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/lymphocyte-number" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-lymphocyte-count> ;
+    csvw:title "Lymphocyte Number"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/lymphocyte-percent> a csvw:Column ;
+    dct:description "Lymphocyte Percent (LBXLYPCT, LOINC 736-9)."@en ;
+    dct:identifier "ms-ia77g23fvigr9b9dkx6a1rcl" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/lymphocyte-percent" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-lymphocyte-percent> ;
+    csvw:title "Lymphocyte Percent"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/mean-cell-hemoglobin> a csvw:Column ;
+    dct:description "Mean Cell Hemoglobin (LBXMCHSI, LOINC 785-6)."@en ;
+    dct:identifier "ms-scmpca8vlisbmmfa3njyx2o2" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/mean-cell-hemoglobin" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-mean-cell-hemoglobin> ;
+    csvw:title "Mean Cell Hemoglobin"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/mean-cell-hemoglobin-concentration> a csvw:Column ;
+    dct:description "Mean Cell Hemoglobin Concentration (LBXMC, LOINC 786-4)."@en ;
+    dct:identifier "ms-pf1abnd8c9cfwb4hw9lc65b0" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/mean-cell-hemoglobin-concentration" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-mean-cell-hemoglobin-concentration> ;
+    csvw:title "Mean Cell Hemoglobin Concentration"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/mean-cell-volume> a csvw:Column ;
+    dct:description "Mean Cell Volume (LBXMCVSI, LOINC 787-2)."@en ;
+    dct:identifier "ms-sqjdwrx3kpuuxkwa69bodut2" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/mean-cell-volume" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-mean-cell-volume> ;
+    csvw:title "Mean Cell Volume"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/mean-platelet-volume> a csvw:Column ;
+    dct:description "Mean Platelet Volume (LBXMPSI, LOINC 32623-1)."@en ;
+    dct:identifier "ms-n6mstjwsss62iruurp7utrn4" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/mean-platelet-volume" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-mean-platelet-volume> ;
+    csvw:title "Mean Platelet Volume"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/monocyte-number> a csvw:Column ;
+    dct:description "Monocyte Number (LBDMONO, LOINC 742-7)."@en ;
+    dct:identifier "ms-hesbothq9s8ihc33ihsbv3bi" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/monocyte-number" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-monocyte-count> ;
+    csvw:title "Monocyte Number"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/monocyte-percent> a csvw:Column ;
+    dct:description "Monocyte Percent (LBXMOPCT, LOINC 5905-5)."@en ;
+    dct:identifier "ms-cyu9eutfs28y6tl8bsxwr3qe" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/monocyte-percent" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-monocyte-percent> ;
+    csvw:title "Monocyte Percent"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/nucleated-red-blood-cells> a csvw:Column ;
+    dct:description "Nucleated red blood cells per 100 white blood cells (LBXNRBC)."@en ;
+    dct:identifier "ms-swvr4xwxui5idfg7r6tfa1mr" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/nucleated-red-blood-cells" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-nucleated-red-blood-cells> ;
+    csvw:title "Nucleated Red Blood Cells"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/platelet-count> a csvw:Column ;
+    dct:description "Platelet Count (LBXPLTSI, LOINC 777-3)."@en ;
+    dct:identifier "ms-o3jk44vqom9ne0v4tiay1ys7" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/platelet-count" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-platelet-count> ;
+    csvw:title "Platelet Count"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/red-blood-cell-count> a csvw:Column ;
+    dct:description "Red Blood Cell Count (LBXRBCSI, LOINC 789-8)."@en ;
+    dct:identifier "ms-uraf13ojset6tivrdptohfbr" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/red-blood-cell-count" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-red-blood-cell-count> ;
+    csvw:title "Red Blood Cell Count"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/red-cell-distribution-width> a csvw:Column ;
+    dct:description "Red Cell Distribution Width (LBXRDW, LOINC 788-0)."@en ;
+    dct:identifier "ms-pf6ne2nf0ef5xeba7q73a2s8" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/red-cell-distribution-width" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-red-cell-distribution-width> ;
+    csvw:title "Red Cell Distribution Width"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/segmented-neutrophils-number> a csvw:Column ;
+    dct:description "Segmented Neutrophils Number (LBDNENO, LOINC 751-8)."@en ;
+    dct:identifier "ms-a3bccid1kdgem2m5rix68o1y" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/segmented-neutrophils-number" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-neutrophil-count> ;
+    csvw:title "Segmented Neutrophils Number"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/segmented-neutrophils-percent> a csvw:Column ;
+    dct:description "Segmented Neutrophils Percent (LBXNEPCT, LOINC 770-8)."@en ;
+    dct:identifier "ms-n13vv8g72h826o4o1jxm1o91" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/segmented-neutrophils-percent" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-neutrophil-percent> ;
+    csvw:title "Segmented Neutrophils Percent"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/total-cholesterol> a csvw:Column ;
+    dct:description "Total cholesterol in serum, mg/dL (LBXTC, LOINC 2093-3)."@en ;
+    dct:identifier "ms-rl42ns60wqjt2jr4kgmfomsd" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/total-cholesterol" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-total-cholesterol> ;
+    csvw:title "Total Cholesterol"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/total-cholesterol-si> a csvw:Column ;
+    dct:description "Total cholesterol in serum, mmol/L (the agency's conversion of LBXTC) (LBDTCSI, LOINC 2093-3)."@en ;
+    dct:identifier "ms-qp5mdgab3s37zwqzyfzq8rvi" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/total-cholesterol-si" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-total-cholesterol-si> ;
+    csvw:title "Total Cholesterol (SI)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/white-blood-cell-count> a csvw:Column ;
+    dct:description "White Blood Cell Count (LBXWBCSI, LOINC 6690-2)."@en ;
+    dct:identifier "ms-cujdlrpxv7byme6c5z3ai1ui" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-laboratory-results/white-blood-cell-count" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-white-blood-cell-count> ;
+    csvw:title "White Blood Cell Count"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-alzheimer-s-disease-or-related-disorder> a csvw:Column ;
+    dct:description "Whether the person has alzheimer's disease or related disorder (Alzheimer's Disease or Related Disorder, SNOMED CT 26929004), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by CMS SP_ALZHDMTA."@en ;
+    dct:identifier "ms-d9z9mcx6gs9zbz4k6f0v738s" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-alzheimer-s-disease-or-related-disorder" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-alzheimers-disease> ;
+    csvw:title "Condition: Alzheimer's Disease or Related Disorder"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-angina> a csvw:Column ;
+    dct:description "Whether the person has angina (Angina, SNOMED CT 194828000), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160D."@en ;
+    dct:identifier "ms-o4d67oubyyunugx3la44f53u" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-angina" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-angina> ;
+    csvw:title "Condition: Angina"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-arthritis> a csvw:Column ;
+    dct:description "Whether the person has arthritis (Arthritis, SNOMED CT 3723001), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160A, BRFSS HAVARTH4, CMS SP_RA_OA."@en ;
+    dct:identifier "ms-nd1v8jk7wtm1tthzw1f4987t" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-arthritis" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-arthritis> ;
+    csvw:title "Condition: Arthritis"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-asthma> a csvw:Column ;
+    dct:description "Whether the person has asthma (Asthma, SNOMED CT 195967001), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ010, BRFSS ASTHMA3."@en ;
+    dct:identifier "ms-acr1xvqppf1b3rjsrst6tt4p" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-asthma" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-asthma> ;
+    csvw:title "Condition: Asthma"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-cancer> a csvw:Column ;
+    dct:description "Whether the person has cancer (Cancer, SNOMED CT 363346000), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ220, BRFSS CHCOCNC1, CMS SP_CNCR."@en ;
+    dct:identifier "ms-ix0my2v2z79s002g0r8orosf" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-cancer" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-cancer> ;
+    csvw:title "Condition: Cancer"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-chronic-bronchitis> a csvw:Column ;
+    dct:description "Whether the person has chronic bronchitis (Chronic Bronchitis, SNOMED CT 63480004), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160K."@en ;
+    dct:identifier "ms-jyx7rxfktazhgxgq84fxf6wr" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-chronic-bronchitis" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-chronic-bronchitis> ;
+    csvw:title "Condition: Chronic Bronchitis"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-congestive-heart-failure> a csvw:Column ;
+    dct:description "Whether the person has congestive heart failure (Congestive Heart Failure, SNOMED CT 42343007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160B, CMS SP_CHF."@en ;
+    dct:identifier "ms-hyqlz591lhj54sdt1a1mup70" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-congestive-heart-failure" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-congestive-heart-failure> ;
+    csvw:title "Condition: Congestive Heart Failure"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-copd> a csvw:Column ;
+    dct:description "Whether the person has copd (COPD, SNOMED CT 13645005), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160O, BRFSS CHCCOPD3, CMS SP_COPD."@en ;
+    dct:identifier "ms-mijr18ynaqde2l8jps70l2g6" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-copd" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-copd> ;
+    csvw:title "Condition: COPD"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-coronary-heart-disease> a csvw:Column ;
+    dct:description "Whether the person has coronary heart disease (Coronary Heart Disease, SNOMED CT 53741008), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160C, BRFSS CVDCRHD4, CMS SP_ISCHMCHT."@en ;
+    dct:identifier "ms-udbydjqj76l8kl6mi2s3v7vd" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-coronary-heart-disease" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-coronary-heart-disease> ;
+    csvw:title "Condition: Coronary Heart Disease"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-depression> a csvw:Column ;
+    dct:description "Whether the person has depression (Depression, SNOMED CT 35489007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS ADDEPEV3, CMS SP_DEPRESSN."@en ;
+    dct:identifier "ms-of4crvmnrr3s5q5396kmt0jv" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-depression" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-depression> ;
+    csvw:title "Condition: Depression"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-diabetes> a csvw:Column ;
+    dct:description "Whether the person has diabetes (Diabetes, SNOMED CT 73211009), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS DIABETE4, CMS SP_DIABETES."@en ;
+    dct:identifier "ms-fzpb9xr5jg2m3e3dzmvi1v3h" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-diabetes" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-diabetes> ;
+    csvw:title "Condition: Diabetes"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-emphysema> a csvw:Column ;
+    dct:description "Whether the person has emphysema (Emphysema, SNOMED CT 87433001), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160G."@en ;
+    dct:identifier "ms-sbulkq80j4fkbiql4zgje4qr" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-emphysema" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-emphysema> ;
+    csvw:title "Condition: Emphysema"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-heart-attack> a csvw:Column ;
+    dct:description "Whether the person has heart attack (Heart Attack, SNOMED CT 22298006), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160E, BRFSS CVDINFR4."@en ;
+    dct:identifier "ms-yshoeps2dm0j1ueusqs825v6" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-heart-attack" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-heart-attack> ;
+    csvw:title "Condition: Heart Attack"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-high-blood-pressure> a csvw:Column ;
+    dct:description "Whether the person has high blood pressure (High Blood Pressure, SNOMED CT 38341003), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS BPHIGH6."@en ;
+    dct:identifier "ms-lvockfc8lce5p15wuwxc1kwa" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-high-blood-pressure" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-high-blood-pressure> ;
+    csvw:title "Condition: High Blood Pressure"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-high-cholesterol> a csvw:Column ;
+    dct:description "Whether the person has high cholesterol (High Cholesterol, SNOMED CT 13644009), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS TOLDHI3."@en ;
+    dct:identifier "ms-gp3jxw3xzs761ll6u5rvc6jr" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-high-cholesterol" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-high-cholesterol> ;
+    csvw:title "Condition: High Cholesterol"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-indicator-basis> a csvw:Column ;
+    dct:description "How a study established its chronic condition indicators: the person's report of what a health professional told them (NHANES, BRFSS) or the presence of qualifying diagnosis codes in claims (CMS). Stated once per record so the three studies compare on equal terms."@en ;
+    dct:identifier "ms-hc79skkfionpgw87dsg5yrgw" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-indicator-basis" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-indicator-basis> ;
+    csvw:title "Condition Indicator Basis"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-kidney-disease> a csvw:Column ;
+    dct:description "Whether the person has kidney disease (Kidney Disease, SNOMED CT 709044004), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS CHCKDNY2, CMS SP_CHRNKIDN."@en ;
+    dct:identifier "ms-sw5rt0k2uap0e3xgl4rznfgu" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-kidney-disease" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-kidney-disease> ;
+    csvw:title "Condition: Kidney Disease"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-liver-condition> a csvw:Column ;
+    dct:description "Whether the person has liver condition (Liver Condition, SNOMED CT 235856003), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160L."@en ;
+    dct:identifier "ms-atqkooccakulfhkt18c008fx" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-liver-condition" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-liver-condition> ;
+    csvw:title "Condition: Liver Condition"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-osteoporosis> a csvw:Column ;
+    dct:description "Whether the person has osteoporosis (Osteoporosis, SNOMED CT 64859006), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by CMS SP_OSTEOPRS."@en ;
+    dct:identifier "ms-l784ggegqcvrpnmw2yvo4il7" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-osteoporosis" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-osteoporosis> ;
+    csvw:title "Condition: Osteoporosis"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-skin-cancer> a csvw:Column ;
+    dct:description "Whether the person has skin cancer (Skin Cancer, SNOMED CT 372130007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS CHCSCNC1."@en ;
+    dct:identifier "ms-xsohkckyof7y1xj8h1ab4pxu" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-skin-cancer" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-skin-cancer> ;
+    csvw:title "Condition: Skin Cancer"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-stroke> a csvw:Column ;
+    dct:description "Whether the person has stroke (Stroke, SNOMED CT 230690007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160F, BRFSS CVDSTRK3, CMS SP_STRKETIA."@en ;
+    dct:identifier "ms-zc6p008h5naqev8zngtzvyx9" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-stroke" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-stroke> ;
+    csvw:title "Condition: Stroke"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-thyroid-problem> a csvw:Column ;
+    dct:description "Whether the person has thyroid problem (Thyroid Problem, SNOMED CT 14304000), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160M."@en ;
+    dct:identifier "ms-p8u71b4lhct4ra0szgkex7xo" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-thyroid-problem" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/condition-thyroid-problem> ;
+    csvw:title "Condition: Thyroid Problem"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/doctor-ever-said-you-were-overweight-mcq080> a csvw:Column ;
+    dct:description "Whether a doctor or health professional ever said the participant was overweight (MCQ080)."@en ;
+    dct:identifier "ms-fwyb9ukfypotqkvahtygrjo5" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/doctor-ever-said-you-were-overweight-mcq080" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-doctor-said-overweight> ;
+    csvw:title "Doctor Ever Said You Were Overweight (MCQ080)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/still-have-asthma-mcq035> a csvw:Column ;
+    dct:description "Whether the participant still has asthma (MCQ035)."@en ;
+    dct:identifier "ms-ejjthi5lftrx9a7rv3fedq6m" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-medical-conditions/still-have-asthma-mcq035" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-still-have-asthma> ;
+    csvw:title "Still Have Asthma (MCQ035)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/difficulty-dressing-yourself-pfq061l> a csvw:Column ;
+    dct:description "Difficulty Dressing Yourself (PFQ061L), on the four-point difficulty scale."@en ;
+    dct:identifier "ms-p4jxl2rur1agjhdpvj2g9u4k" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-physical-functioning/difficulty-dressing-yourself-pfq061l" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-dressing> ;
+    csvw:title "Difficulty Dressing Yourself (PFQ061L)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/difficulty-getting-in-and-out-of-bed-pfq061j> a csvw:Column ;
+    dct:description "Difficulty Getting In and Out of Bed (PFQ061J), on the four-point difficulty scale."@en ;
+    dct:identifier "ms-cy6k5rxvhvg2v27cfp7pjwyx" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-physical-functioning/difficulty-getting-in-and-out-of-bed-pfq061j" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-getting-in-and-out-of-bed> ;
+    csvw:title "Difficulty Getting In and Out of Bed (PFQ061J)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/difficulty-lifting-or-carrying-pfq061e> a csvw:Column ;
+    dct:description "Difficulty Lifting or Carrying (PFQ061E), on the four-point difficulty scale."@en ;
+    dct:identifier "ms-b1mxr233mgqvzr39c90ly8cv" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-physical-functioning/difficulty-lifting-or-carrying-pfq061e" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-lifting-or-carrying> ;
+    csvw:title "Difficulty Lifting or Carrying (PFQ061E)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/difficulty-standing-for-long-periods-pfq061m> a csvw:Column ;
+    dct:description "Difficulty Standing for Long Periods (PFQ061M), on the four-point difficulty scale."@en ;
+    dct:identifier "ms-vp4ow7t3q8w2phcft0qvyj4u" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-physical-functioning/difficulty-standing-for-long-periods-pfq061m" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-standing-for-long-periods> ;
+    csvw:title "Difficulty Standing for Long Periods (PFQ061M)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/difficulty-standing-up-from-an-armless-chair-pfq061i> a csvw:Column ;
+    dct:description "Difficulty Standing Up from an Armless Chair (PFQ061I), on the four-point difficulty scale."@en ;
+    dct:identifier "ms-y52y4mpq95zcknal0be1uc7v" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-physical-functioning/difficulty-standing-up-from-an-armless-chair-pfq061i" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-standing-up-from-chair> ;
+    csvw:title "Difficulty Standing Up from an Armless Chair (PFQ061I)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/difficulty-stooping-crouching-or-kneeling-pfq061d> a csvw:Column ;
+    dct:description "Difficulty Stooping, Crouching or Kneeling (PFQ061D), on the four-point difficulty scale."@en ;
+    dct:identifier "ms-knrs4clih4pi26tm2zra1ai0" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-physical-functioning/difficulty-stooping-crouching-or-kneeling-pfq061d" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-stooping-crouching-kneeling> ;
+    csvw:title "Difficulty Stooping, Crouching or Kneeling (PFQ061D)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/difficulty-walking-a-quarter-mile-pfq061b> a csvw:Column ;
+    dct:description "Difficulty Walking a Quarter Mile (PFQ061B), on the four-point difficulty scale."@en ;
+    dct:identifier "ms-mktq5xr8slz67q85idl8bsky" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-physical-functioning/difficulty-walking-a-quarter-mile-pfq061b" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-walking-quarter-mile> ;
+    csvw:title "Difficulty Walking a Quarter Mile (PFQ061B)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/difficulty-walking-between-rooms-pfq061h> a csvw:Column ;
+    dct:description "Difficulty Walking Between Rooms (PFQ061H), on the four-point difficulty scale."@en ;
+    dct:identifier "ms-crr2z3b2l7hlq1kvevppt8kt" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-physical-functioning/difficulty-walking-between-rooms-pfq061h" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-walking-between-rooms> ;
+    csvw:title "Difficulty Walking Between Rooms (PFQ061H)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/difficulty-walking-up-ten-stairs-pfq061c> a csvw:Column ;
+    dct:description "Difficulty Walking Up Ten Stairs (PFQ061C), on the four-point difficulty scale."@en ;
+    dct:identifier "ms-rot4z5ny8gdkfmimedcjl1te" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-physical-functioning/difficulty-walking-up-ten-stairs-pfq061c" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-walking-up-ten-stairs> ;
+    csvw:title "Difficulty Walking Up Ten Stairs (PFQ061C)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/experience-confusion-or-memory-problems-pfq057> a csvw:Column ;
+    dct:description "Whether the participant experiences confusion or memory problems (PFQ057)."@en ;
+    dct:identifier "ms-jxdk8rs1m133yzb52rfs08hy" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-physical-functioning/experience-confusion-or-memory-problems-pfq057" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-confusion-memory-problems> ;
+    csvw:title "Experience Confusion or Memory Problems (PFQ057)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/limitations-keeping-you-from-working-pfq049> a csvw:Column ;
+    dct:description "Whether a physical, mental or emotional problem keeps the participant from working (PFQ049)."@en ;
+    dct:identifier "ms-gxy0s65v35djnq875rzhcmby" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-physical-functioning/limitations-keeping-you-from-working-pfq049" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-limitations-keeping-from-working> ;
+    csvw:title "Limitations Keeping You from Working (PFQ049)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/need-special-equipment-to-walk-pfq054> a csvw:Column ;
+    dct:description "Whether the participant needs special equipment to walk (PFQ054)."@en ;
+    dct:identifier "ms-wh4zkqhos44fbb5p0b5c7w1d" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-physical-functioning/need-special-equipment-to-walk-pfq054" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-need-special-equipment-to-walk> ;
+    csvw:title "Need Special Equipment to Walk (PFQ054)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-smoking/age-started-smoking-cigarettes-regularly-smd030> a csvw:Column ;
+    dct:description "The age the participant started smoking cigarettes regularly (SMD030)."@en ;
+    dct:identifier "ms-wlfal1j4vnwy76szun72madm" ;
+    csvw:datatype "integer" ;
+    csvw:name "nhanes-participant/nhanes-smoking/age-started-smoking-cigarettes-regularly-smd030" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-age-started-smoking> ;
+    csvw:title "Age Started Smoking Cigarettes Regularly (SMD030)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-smoking/average-cigarettes-per-day-past-30-days-smd650> a csvw:Column ;
+    dct:description "The average number of cigarettes smoked per day during the past 30 days (SMD650)."@en ;
+    dct:identifier "ms-v9wj86qu70lda3tt2dh299wz" ;
+    csvw:datatype "integer" ;
+    csvw:name "nhanes-participant/nhanes-smoking/average-cigarettes-per-day-past-30-days-smd650" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-cigarettes-per-day-past-30-days> ;
+    csvw:title "Average Cigarettes per Day, Past 30 Days (SMD650)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-smoking/do-you-now-smoke-cigarettes-smq040> a csvw:Column ;
+    dct:description "Whether the participant now smokes cigarettes every day, some days or not at all (SMQ040)."@en ;
+    dct:identifier "ms-mq5xicyh1n3d8ofhyroazip2" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-smoking/do-you-now-smoke-cigarettes-smq040" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-now-smoke-cigarettes> ;
+    csvw:title "Do You Now Smoke Cigarettes (SMQ040)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-smoking/ever-used-an-e-cigarette-smq900> a csvw:Column ;
+    dct:description "Whether the participant has ever used an e-cigarette (SMQ900)."@en ;
+    dct:identifier "ms-gy1045dipmx8udv1bndk7hrv" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-smoking/ever-used-an-e-cigarette-smq900" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-ever-used-e-cigarette> ;
+    csvw:title "Ever Used an E-cigarette (SMQ900)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-smoking/smoked-at-least-100-cigarettes-in-life-smq020> a csvw:Column ;
+    dct:description "Whether the participant has smoked at least 100 cigarettes in their life (SMQ020)."@en ;
+    dct:identifier "ms-lnbzdjsluc4ebnri7k4dvn2i" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-smoking/smoked-at-least-100-cigarettes-in-life-smq020" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-smoked-100-cigarettes> ;
+    csvw:title "Smoked at Least 100 Cigarettes in Life (SMQ020)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-smoking/smoking-status> a csvw:Column ;
+    dct:description "Tobacco smoking status (LOINC 72166-2) as the survey establishes it: NHANES from SMQ020 and SMQ040, BRFSS from SMOKE100 and SMOKDAY2 (the agency's _SMOKER3 is kept beside it). The LOINC answer list LL2201-3."@en ;
+    dct:identifier "ms-n7pn5ctqo81v0v418hez5zv5" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-smoking/smoking-status" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/smoking-status> ;
+    csvw:title "Smoking Status"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-survey-design/data-release-cycle-sddsrvyr> a csvw:Column ;
+    dct:description "The NHANES data release cycle (SDDSRVYR)."@en ;
+    dct:identifier "ms-k52nvzllwurg016nvsulpm32" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-survey-design/data-release-cycle-sddsrvyr" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-data-release-cycle> ;
+    csvw:title "Data Release Cycle (SDDSRVYR)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-survey-design/full-sample-2-year-interview-weight-wtint2yr> a csvw:Column ;
+    dct:description "The full-sample two-year interview weight (WTINT2YR), for weighted estimates of the interviewed sample."@en ;
+    dct:identifier "ms-zmw9684hejwjsfcg6t71jkgl" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-survey-design/full-sample-2-year-interview-weight-wtint2yr" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-interview-weight> ;
+    csvw:title "Full Sample 2 Year Interview Weight (WTINT2YR)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-survey-design/full-sample-2-year-mec-exam-weight-wtmec2yr> a csvw:Column ;
+    dct:description "The full-sample two-year MEC examination weight (WTMEC2YR); zero for participants not examined."@en ;
+    dct:identifier "ms-w7xdjmfmoev4of0gd76mtnto" ;
+    csvw:datatype "decimal" ;
+    csvw:name "nhanes-participant/nhanes-survey-design/full-sample-2-year-mec-exam-weight-wtmec2yr" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-mec-exam-weight> ;
+    csvw:title "Full Sample 2 Year MEC Exam Weight (WTMEC2YR)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-survey-design/interview-examination-status-ridstatr> a csvw:Column ;
+    dct:description "Whether the participant was interviewed only, or interviewed and examined at the mobile examination center (RIDSTATR)."@en ;
+    dct:identifier "ms-j9l0spojx47xnjqipfl9mzte" ;
+    csvw:datatype "token" ;
+    csvw:name "nhanes-participant/nhanes-survey-design/interview-examination-status-ridstatr" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-interview-examination-status> ;
+    csvw:title "Interview/Examination Status (RIDSTATR)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-survey-design/masked-variance-pseudo-psu-sdmvpsu> a csvw:Column ;
+    dct:description "The masked variance pseudo primary sampling unit (SDMVPSU)."@en ;
+    dct:identifier "ms-vxldr9jodr9eu5uol3g4c189" ;
+    csvw:datatype "integer" ;
+    csvw:name "nhanes-participant/nhanes-survey-design/masked-variance-pseudo-psu-sdmvpsu" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-masked-variance-psu> ;
+    csvw:title "Masked Variance Pseudo-PSU (SDMVPSU)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-survey-design/masked-variance-pseudo-stratum-sdmvstra> a csvw:Column ;
+    dct:description "The masked variance pseudo stratum (SDMVSTRA)."@en ;
+    dct:identifier "ms-yksuiithtrif7jdrjpi4o7eg" ;
+    csvw:datatype "integer" ;
+    csvw:name "nhanes-participant/nhanes-survey-design/masked-variance-pseudo-stratum-sdmvstra" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-masked-variance-stratum> ;
+    csvw:title "Masked Variance Pseudo-Stratum (SDMVSTRA)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/respondent-sequence-number-seqn> a csvw:Column ;
+    dct:description "The NHANES respondent sequence number, the identifier every NHANES file carries for a participant (SEQN)."@en ;
+    dct:identifier "ms-uto4zszvpicva38wx77knz5y" ;
+    csvw:datatype "string" ;
+    csvw:name "nhanes-participant/respondent-sequence-number-seqn" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/fair/nhanes-respondent-sequence-number> ;
+    csvw:title "Respondent Sequence Number (SEQN)"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/activity-description> a csvw:Column ;
+    dct:description "A description of what the activity does and why."@en ;
+    dct:identifier "ms-hhusuzzig19rs46ngz23k5g7" ;
+    csvw:datatype "string" ;
+    csvw:name "prov-activity/activity-description" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/activity-description> ;
+    csvw:title "Activity Description"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/activity-identifier> a csvw:Column ;
+    dct:description "The identifier of a PROV activity: a URI or another globally unique identifier."@en ;
+    dct:identifier "ms-wr06h54xqqw2q9id8i9673jy" ;
+    csvw:datatype "string" ;
+    csvw:name "prov-activity/activity-identifier" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/activity-identifier> ;
+    csvw:title "Activity Identifier"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/activity-label> a csvw:Column ;
+    dct:description "A human-readable label for a PROV activity."@en ;
+    dct:identifier "ms-r6hkunjm2q0hlxiknlc9ljix" ;
+    csvw:datatype "string" ;
+    csvw:name "prov-activity/activity-label" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/activity-label> ;
+    csvw:title "Activity Label"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/activity-location> a csvw:Column ;
+    dct:description "Where the activity took place (prov:atLocation), as text."@en ;
+    dct:identifier "ms-uzai5uey5p1fnn9ezj9u6vor" ;
+    csvw:datatype "string" ;
+    csvw:name "prov-activity/activity-location" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/activity-location> ;
+    csvw:title "Activity Location"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/activity-status> a csvw:Column ;
+    dct:description "The state of an activity, from the Data Privacy Vocabulary activity status concepts."@en ;
+    dct:identifier "ms-wl6j4ekcmu4hvt2m12zw4zp8" ;
+    csvw:datatype "token" ;
+    csvw:name "prov-activity/activity-status" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/activity-status> ;
+    csvw:title "Activity Status"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/activity-type> a csvw:Column ;
+    dct:description "The kind of activity, in the vocabulary of the domain (prov:type)."@en ;
+    dct:identifier "ms-jjzmhdxvbt97pq81iwqubtxk" ;
+    csvw:datatype "string" ;
+    csvw:name "prov-activity/activity-type" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/activity-type> ;
+    csvw:title "Activity Type"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/ended-at> a csvw:Column ;
+    dct:description "When the activity ended (prov:endedAtTime)."@en ;
+    dct:identifier "ms-a5scyosu6j84vz350mqyrzl2" ;
+    csvw:datatype "dateTime" ;
+    csvw:name "prov-activity/ended-at" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/ended-at-time> ;
+    csvw:title "Ended At"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/error-message> a csvw:Column ;
+    dct:description "The error the activity reported, if it failed."@en ;
+    dct:identifier "ms-xlgjqdpwdbn2re3mdh5yy2rk" ;
+    csvw:datatype "string" ;
+    csvw:name "prov-activity/error-message" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/error-message> ;
+    csvw:title "Error Message"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/had-plan-reference> a csvw:Column ;
+    dct:description "The plan the activity followed (prov:hadPlan). Holds the IRI of the referenced thing."@en ;
+    dct:identifier "ms-vhezo2cckpe92x4c3j2memeh" ;
+    csvw:datatype "string" ;
+    csvw:name "prov-activity/had-plan-reference" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/had-plan-reference> ;
+    csvw:title "Had Plan Reference"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/started-at> a csvw:Column ;
+    dct:description "When the activity started (prov:startedAtTime)."@en ;
+    dct:identifier "ms-sa4nl1kbpdr842fkucvfjkpq" ;
+    csvw:datatype "dateTime" ;
+    csvw:name "prov-activity/started-at" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/started-at-time> ;
+    csvw:title "Started At"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/used-entity-reference> a csvw:Column ;
+    dct:description "An entity the activity used (prov:used). Holds the IRI of the referenced thing."@en ;
+    dct:identifier "ms-t0whhrqtnb54te4mk48i1ooj" ;
+    csvw:datatype "string" ;
+    csvw:name "prov-activity/used-entity-reference" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/used-entity-reference> ;
+    csvw:title "Used Entity Reference"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/was-associated-with-reference> a csvw:Column ;
+    dct:description "The agent associated with the activity (prov:wasAssociatedWith). Holds the IRI of the referenced thing."@en ;
+    dct:identifier "ms-r48alj7hc3797qfjnf2uj71n" ;
+    csvw:datatype "string" ;
+    csvw:name "prov-activity/was-associated-with-reference" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/was-associated-with-reference> ;
+    csvw:title "Was Associated With Reference"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/was-ended-by-reference> a csvw:Column ;
+    dct:description "The entity that ended the activity (prov:wasEndedBy). Holds the IRI of the referenced thing."@en ;
+    dct:identifier "ms-ueb5g1ojzlwwt0mnds5zb6wl" ;
+    csvw:datatype "string" ;
+    csvw:name "prov-activity/was-ended-by-reference" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/was-ended-by-reference> ;
+    csvw:title "Was Ended By Reference"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/was-informed-by-reference> a csvw:Column ;
+    dct:description "An activity that informed this one (prov:wasInformedBy). Holds the IRI of the referenced thing."@en ;
+    dct:identifier "ms-qh84jdzp1kxt85aq4ilo0svk" ;
+    csvw:datatype "string" ;
+    csvw:name "prov-activity/was-informed-by-reference" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/was-informed-by-reference> ;
+    csvw:title "Was Informed By Reference"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/was-started-by-reference> a csvw:Column ;
+    dct:description "The entity that started the activity (prov:wasStartedBy). Holds the IRI of the referenced thing."@en ;
+    dct:identifier "ms-ginfqbk7q59ld2r4us8sjnv1" ;
+    csvw:datatype "string" ;
+    csvw:name "prov-activity/was-started-by-reference" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/was-started-by-reference> ;
+    csvw:title "Was Started By Reference"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-agent/acted-on-behalf-of-reference> a csvw:Column ;
+    dct:description "The agent on whose behalf this agent acted (prov:actedOnBehalfOf). Holds the IRI of the referenced thing."@en ;
+    dct:identifier "ms-og08xf6bu928uuz6t3y0e23f" ;
+    csvw:datatype "string" ;
+    csvw:name "prov-agent/acted-on-behalf-of-reference" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/acted-on-behalf-of-reference> ;
+    csvw:title "Acted On Behalf Of Reference"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-agent/agent-description> a csvw:Column ;
+    dct:description "A description of the agent and its responsibilities."@en ;
+    dct:identifier "ms-gb78cmuyo72hqs5apymdki7l" ;
+    csvw:datatype "string" ;
+    csvw:name "prov-agent/agent-description" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/agent-description> ;
+    csvw:title "Agent Description"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-agent/agent-email> a csvw:Column ;
+    dct:description "The agent's email address (foaf:mbox)."@en ;
+    dct:identifier "ms-qb90a0sp9vvb6c5cbcf236ys" ;
+    csvw:datatype "string" ;
+    csvw:name "prov-agent/agent-email" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/agent-email> ;
+    csvw:title "Agent Email"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-agent/agent-identifier> a csvw:Column ;
+    dct:description "The identifier of a PROV agent: a URI or another globally unique identifier."@en ;
+    dct:identifier "ms-w2ruemcfy35rw60jl1t9dew2" ;
+    csvw:datatype "string" ;
+    csvw:name "prov-agent/agent-identifier" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/agent-identifier> ;
+    csvw:title "Agent Identifier"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-agent/agent-name> a csvw:Column ;
+    dct:description "The name of the agent (foaf:name)."@en ;
+    dct:identifier "ms-xxe21o9ojzmy9wxxky1tnmog" ;
+    csvw:datatype "string" ;
+    csvw:name "prov-agent/agent-name" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/agent-name> ;
+    csvw:title "Agent Name"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-agent/agent-organization-name> a csvw:Column ;
+    dct:description "The organization the agent belongs to or is."@en ;
+    dct:identifier "ms-eftvwi5byq6cdtd931qyxzw0" ;
+    csvw:datatype "string" ;
+    csvw:name "prov-agent/agent-organization-name" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/agent-organization-name> ;
+    csvw:title "Agent Organization Name"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-agent/prov-agent-type> a csvw:Column ;
+    dct:description "The kind of PROV agent: person, organization or software agent."@en ;
+    dct:identifier "ms-i16vqj89it3db7d3c5qjko9p" ;
+    csvw:datatype "token" ;
+    csvw:name "prov-agent/prov-agent-type" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/prov-agent-type> ;
+    csvw:title "PROV Agent Type"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-agent/software-name> a csvw:Column ;
+    dct:description "The name of a software agent."@en ;
+    dct:identifier "ms-aa663ivutjf2fs4757t0bbzy" ;
+    csvw:datatype "string" ;
+    csvw:name "prov-agent/software-name" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/software-name> ;
+    csvw:title "Software Name"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-agent/software-version> a csvw:Column ;
+    dct:description "The version of a software agent."@en ;
+    dct:identifier "ms-x0lebwtobgaelj5pev3258sd" ;
+    csvw:datatype "string" ;
+    csvw:name "prov-agent/software-version" ;
+    csvw:propertyUrl <https://axius-sdc.com/library/provgov/software-version> ;
+    csvw:title "Software Version"@en .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#distribution> a dcat:Distribution ;
+    dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj> ;
+    dcatap:availability <http://publications.europa.eu/resource/authority/planned-availability/AVAILABLE> ;
+    dct:conformsTo <https://sdcstudio.axius-sdc.com/dmlib/dm-xy8upneajsb8vdcmnve01g6g.xsd?sha256=0df45878b0db1c1515e860a4b9993c5f086ffaaebc4c16aaae2092e1da3d3b3b> ;
+    dct:description "The records are not published. Access is by request to the contact point; each record is validated against the immutable schema this catalog cites."@en ;
+    dct:license <http://creativecommons.org/licenses/by/3.0/> ;
+    dct:title "Access to the records through the data holder"@en ;
+    dcat:accessURL <https://axius-sdc.com> .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#table> a csvw:Table ;
+    dct:title "NHANES Participant record"@en ;
+    csvw:column <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/audit-agent-reference>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/audit-entity-reference>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/audit-event-action>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/audit-event-identifier>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/audit-event-outcome>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/audit-recorded-at>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/confidentiality>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/data-subject-reference>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/on-behalf-of-reference>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/provenance-agent-type>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/purpose-of-use>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/system-identifier>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/system-location-name>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/arm-selected-bpaarm>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-1/blood-pressure/body-site-snomed-ct/body-site-code-snomed-ct>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-1/blood-pressure/body-site-snomed-ct/code-display-text>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-1/blood-pressure/body-site-snomed-ct/code-system-snomed-ct>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-1/blood-pressure/diastolic-blood-pressure>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-1/blood-pressure/observation-date-time>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-1/blood-pressure/observation-status>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-1/blood-pressure/systolic-blood-pressure>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-2/blood-pressure/body-site-snomed-ct/body-site-code-snomed-ct>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-2/blood-pressure/body-site-snomed-ct/code-display-text>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-2/blood-pressure/body-site-snomed-ct/code-system-snomed-ct>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-2/blood-pressure/diastolic-blood-pressure>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-2/blood-pressure/observation-date-time>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-2/blood-pressure/observation-status>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-2/blood-pressure/systolic-blood-pressure>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-3/blood-pressure/body-site-snomed-ct/body-site-code-snomed-ct>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-3/blood-pressure/body-site-snomed-ct/code-display-text>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-3/blood-pressure/body-site-snomed-ct/code-system-snomed-ct>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-3/blood-pressure/diastolic-blood-pressure>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-3/blood-pressure/observation-date-time>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-3/blood-pressure/observation-status>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/blood-pressure-reading-3/blood-pressure/systolic-blood-pressure>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/coded-cuff-size-bpacsz>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/heart-rate>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/maximum-inflation-level-bpxml1>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-blood-pressure/pulse-regular-or-irregular-bpxpuls>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/administrative-gender>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/age>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/age-in-months-at-screening-ridagemn>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/annual-household-income-indhhin2>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/are-you-pregnant-now>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/citizenship-status-dmdcitzn>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/country-of-birth-dmdborn4>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/current-educational-attainment>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/education-level-adults-20-dmdeduc2>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/gender-riagendr>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/marital-status>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/marital-status-dmdmartl>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/pregnancy-status-at-exam-ridexprg>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/race-ethnicity-self-identification>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/race-hispanic-origin-with-nh-asian-ridreth3>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/ratio-of-family-income-to-poverty-indfmpir>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/total-number-of-people-in-the-household-dmdhhsiz>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-demographics/veteran-status>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/basophils-number>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/basophils-percent>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/eosinophils-number>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/eosinophils-percent>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/hematocrit>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/hemoglobin>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/lymphocyte-number>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/lymphocyte-percent>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/mean-cell-hemoglobin>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/mean-cell-hemoglobin-concentration>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/mean-cell-volume>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/mean-platelet-volume>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/monocyte-number>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/monocyte-percent>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/nucleated-red-blood-cells>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/platelet-count>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/red-blood-cell-count>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/red-cell-distribution-width>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/segmented-neutrophils-number>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/segmented-neutrophils-percent>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/total-cholesterol>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/total-cholesterol-si>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-laboratory-results/white-blood-cell-count>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-alzheimer-s-disease-or-related-disorder>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-angina>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-arthritis>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-asthma>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-cancer>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-chronic-bronchitis>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-congestive-heart-failure>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-copd>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-coronary-heart-disease>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-depression>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-diabetes>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-emphysema>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-heart-attack>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-high-blood-pressure>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-high-cholesterol>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-indicator-basis>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-kidney-disease>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-liver-condition>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-osteoporosis>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-skin-cancer>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-stroke>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/chronic-condition-indicators/condition-thyroid-problem>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/doctor-ever-said-you-were-overweight-mcq080>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-medical-conditions/still-have-asthma-mcq035>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/difficulty-dressing-yourself-pfq061l>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/difficulty-getting-in-and-out-of-bed-pfq061j>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/difficulty-lifting-or-carrying-pfq061e>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/difficulty-standing-for-long-periods-pfq061m>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/difficulty-standing-up-from-an-armless-chair-pfq061i>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/difficulty-stooping-crouching-or-kneeling-pfq061d>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/difficulty-walking-a-quarter-mile-pfq061b>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/difficulty-walking-between-rooms-pfq061h>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/difficulty-walking-up-ten-stairs-pfq061c>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/experience-confusion-or-memory-problems-pfq057>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/limitations-keeping-you-from-working-pfq049>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-physical-functioning/need-special-equipment-to-walk-pfq054>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-smoking/age-started-smoking-cigarettes-regularly-smd030>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-smoking/average-cigarettes-per-day-past-30-days-smd650>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-smoking/do-you-now-smoke-cigarettes-smq040>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-smoking/ever-used-an-e-cigarette-smq900>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-smoking/smoked-at-least-100-cigarettes-in-life-smq020>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-smoking/smoking-status>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-survey-design/data-release-cycle-sddsrvyr>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-survey-design/full-sample-2-year-interview-weight-wtint2yr>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-survey-design/full-sample-2-year-mec-exam-weight-wtmec2yr>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-survey-design/interview-examination-status-ridstatr>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-survey-design/masked-variance-pseudo-psu-sdmvpsu>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/nhanes-survey-design/masked-variance-pseudo-stratum-sdmvstra>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/nhanes-participant/respondent-sequence-number-seqn>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/activity-description>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/activity-identifier>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/activity-label>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/activity-location>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/activity-status>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/activity-type>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/ended-at>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/error-message>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/had-plan-reference>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/started-at>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/used-entity-reference>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/was-associated-with-reference>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/was-ended-by-reference>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/was-informed-by-reference>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-activity/was-started-by-reference>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-agent/acted-on-behalf-of-reference>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-agent/agent-description>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-agent/agent-email>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-agent/agent-identifier>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-agent/agent-name>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-agent/agent-organization-name>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-agent/prov-agent-type>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-agent/software-name>,
+        <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/prov-agent/software-version> ;
+    csvw:url <https://sdcstudio.axius-sdc.com/dmlib/dm-xy8upneajsb8vdcmnve01g6g.xsd?sha256=0df45878b0db1c1515e860a4b9993c5f086ffaaebc4c16aaae2092e1da3d3b3b> .
+
+<https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#variables> a csvw:TableGroup ;
+    dct:description "The 153 variables of a NHANES Participant governed data record, in document order, as the immutable schema defines them (SHA-256 0df45878b0db1c1515e860a4b9993c5f086ffaaebc4c16aaae2092e1da3d3b3b). Every variable may carry one of the sixteen exceptional values of the SDC4 reference model in place of a value, the typed reason it is missing."@en ;
+    dct:title "Variables of NHANES Participant"@en ;
+    csvw:table <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#table> .
+
+<https://semanticdatacharter.com/ns/sdc4/sdc4.xsd> a dct:Standard ;
+    dct:title "SDC4 reference model"@en .
+
+<https://w3id.org/dpv/dpv-pd#Age> a dpv:PersonalData .
+
+<https://w3id.org/dpv/dpv-pd#Gender> a dpv:PersonalData .
+
+<https://w3id.org/dpv/dpv-pd#HealthRecord> a dpv:PersonalData .
+
+<http://creativecommons.org/licenses/by/3.0/> a dct:LicenseDocument .
+
+<http://publications.europa.eu/resource/authority/data-theme> a skos:ConceptScheme ;
+    dct:title "Data Theme Named Authority List"@en,
+        "EU Vocabularies Data Theme"@en .
+
+<http://publications.europa.eu/resource/authority/language/ENG> a dct:LinguisticSystem ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> .
+
+<http://data.europa.eu/eli/reg/2025/327/oj> a eli:LegalResource .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system> a skos:ConceptScheme ;
+    dct:title "Coding System NAL"@en .
+
+<https://sdcstudio.axius-sdc.com/dmlib/dm-xy8upneajsb8vdcmnve01g6g.xsd?sha256=0df45878b0db1c1515e860a4b9993c5f086ffaaebc4c16aaae2092e1da3d3b3b> a dct:Standard ;
+    dct:identifier "sha256:0df45878b0db1c1515e860a4b9993c5f086ffaaebc4c16aaae2092e1da3d3b3b" ;
+    dct:issued "2026-09-26"^^xsd:date ;
+    dct:title "SDC4 schema dm-xy8upneajsb8vdcmnve01g6g (NHANES Participant)"@en .
+
+<https://axius-sdc.com> a foaf:Agent,
+        foaf:Document ;
+    cv:contactPoint [ a cv:ContactPoint ;
+            cv:contactPage <https://axius-sdc.com> ;
+            cv:email "contact@axius-sdc.com" ] ;
+    dct:title "Axius SDC, Inc."@en ;
+    dct:type <https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type/private-company> ;
+    foaf:homepage <https://axius-sdc.com> ;
+    foaf:name "Axius SDC, Inc." .
+

@@ -1,0 +1,11 @@
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+<https://fair.healthdata.be/dataset/d43a158e-7d13-4660-bbc3-9d3f8d5501e5>
+	a dcat:Dataset ;
+    dpv:hasLegalBasis [
+        a dpv:LegalBasis ;
+        dct:description "CSI Deliberation no. 21/028 of february 18, 2021, last amended on june 18, 2021, relating to the communication of data to pseudonymized personal character relating to the health of vaccinnet+, healthdata covid-19 database i and ii, healthdata covid-19 clinical database, cobrha, statbel and the agency intermutualist in sciensano, as part of the link-vacc project and the subsequent processing of personal data pseudonymised by the federal drug agency in view monitoring the safety of covid-19 vaccines"@en;
+        dct:source <https://www.ehealth.fgov.be/ehealthplatform/file/view/AXkNfdPml9vUUfvGGfJr?filename=21-028-f212-AFMPS-vaccinnet-modifi%C3%A9e%20le%2018%20juin%202021.pdf>, <https://www.ehealth.fgov.be/ehealthplatform/file/view/AX_-9sZSuwVJMAnC0ENo?filename=21-028-f166-LINK-VACC-modifi%C3%A9e%20le%205%20avril%202022.pdf>
+    ] .	

@@ -1,0 +1,9 @@
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<https://fair.healthdata.be/dataset/d43a158e-7d13-4660-bbc3-9d3f8d5501e5>
+	a dcat:Dataset ;
+    dpv:hasPurpose [ a dpv:Purpose;	
+		dct:description "Dataset Purpose description"@de;	
+	] .

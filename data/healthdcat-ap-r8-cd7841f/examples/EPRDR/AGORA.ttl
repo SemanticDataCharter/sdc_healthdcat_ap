@@ -1,0 +1,954 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix cv: <http://data.europa.eu/m8g/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geodcatap: <http://data.europa.eu/930/> .
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix agora: <https://eu-rd-platform.jrc.ec.europa.eu/mdr/detail/AGORA/> .
+
+# =============================================================================
+# AGORA Registry - HealthDCAT-AP Release 8 compliant description
+# Source: https://eu-rd-platform.jrc.ec.europa.eu/mdr/detail/AGORA
+# ERDRI.dor: https://eu-rd-platform.jrc.ec.europa.eu/erdridor/register/6351
+# =============================================================================
+
+# --- Publisher (JRC) ---
+agora:publisher-jrc
+    a foaf:Agent ;
+    foaf:name "Union body"@en ;
+    dct:type <https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type/administrative-institution> ;
+    cv:contactPoint agora:publisher-contact-point .
+
+agora:publisher-contact-point
+    a cv:ContactPoint ;
+    cv:email "union_body@europa.eu" ;
+    cv:contactPage <https://european-union.europa.eu/> .
+
+# --- Health Data Access Body ---
+agora:hdab-agent
+    a foaf:Agent ;
+    foaf:name "Union body"@en ;
+    dct:type <https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type/administrative-institution> ;
+    cv:contactPoint agora:hdab-contact-point .
+
+agora:hdab-contact-point
+    a cv:ContactPoint ;
+    cv:email "union_body@europa.eu" ;
+    cv:contactPage <https://european-union.europa.eu/> .
+
+# --- Health Data Access Body Coordinator ---
+agora:hdab-coordinator-agent
+    a foaf:Agent ;
+    foaf:name "Union body"@en ;
+    dct:type <https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type/administrative-institution> ;
+    cv:contactPoint agora:hdab-coordinator-contact-point .
+
+agora:hdab-coordinator-contact-point
+    a cv:ContactPoint ;
+    cv:contactPage <https://european-union.europa.eu/> .
+
+# --- Custodian (Data Holder) ---
+agora:custodian-agent
+    a foaf:Agent ;
+    foaf:name "Radboudumc - AGORA data- and biobank"@en ;
+    dct:type <https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type/non-gov-org> ;
+    cv:contactPoint agora:custodian-contact-point .
+
+agora:custodian-contact-point
+    a cv:ContactPoint ;
+    cv:contactPage <https://www.radboudumc.nl/en/> .
+
+# --- Dataset: AGORA ---
+<https://eu-rd-platform.jrc.ec.europa.eu/mdr/detail/AGORA>
+    a dcat:Dataset ;
+    dct:title "[Test] AGORA"@en ;
+    dct:description "The causes of most congenital malformations are largely unknown. Both genetic predisposition and circumstances shortly before and during pregnancy may play a role. AGORA (Aetiologic research into Genetic and Occupational / Environmental Risk factors for Anomalies in children) aims to facilitate research into the causes and consequences of congenital malformations. Blood is drawn from patients and their parents. Parents are asked to complete a questionnaire about circumstances around pregnancy. This registry contains 89 variables."@en ;
+    dct:identifier "AGORA" ;
+    adms:identifier [
+        a adms:Identifier ;
+        skos:notation "6351" ;
+        adms:schemaAgency "ERDRI.dor"
+    ] ;
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+    dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj> ;
+    dct:type <http://publications.europa.eu/resource/authority/dataset-type/STATISTICAL> ;
+    dct:language <http://publications.europa.eu/resource/authority/language/ENG> ;
+    dct:publisher agora:publisher-jrc ;
+    geodcatap:custodian agora:custodian-agent ;
+    healthdcatap:hdab agora:hdab-agent ;
+    healthdcatap:hdabCoordinator agora:hdab-coordinator-agent ;
+    dcat:theme <http://publications.europa.eu/resource/authority/data-theme/HEAL> ;
+    dcat:keyword "rare disease"@en, "congenital malformations"@en, "patient registry"@en, "AGORA"@en, "biobank"@en, "congenital defects"@en, "childhood cancer"@en, "embryogenesis"@en ;
+    healthdcatap:hasCodeValues "ORPHA:93890", "ORPHA:519", "ORPHA:668", "ORPHA:635", "ORPHA:182067", "ORPHA:251636", "ORPHA:513", "ORPHA:616", "ORPHA:547", "ORPHA:449", "ORPHA:94", "ORPHA:370348", "ORPHA:98293", "ORPHA:54595", "ORPHA:780", "ORPHA:654", "ORPHA:3399" ;
+    healthdcatap:hasCodingSystem <https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system/ORPHACODE> ;
+    healthdcatap:healthCategory <https://hdeu-dcat.data.health.europa.eu/resource/authority/healthcategories/MRMR> ;
+    healthdcatap:healthTheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/health-theme/NONCOMMUNICABLE_DISEASES> ;
+    dcat:contactPoint agora:dataset-contact-point ;
+    dcat:landingPage <https://european-union.europa.eu/> ;
+    foaf:page <https://eu-rd-platform.jrc.ec.europa.eu/erdridor/register/6351> ,
+        <https://www.agoraproject.nl/> ;
+    dct:spatial <http://publications.europa.eu/resource/authority/country/NLD> ;
+    dct:provenance agora:provenance ;
+    healthdcatap:hasStructuredData true ;
+    healthdcatap:hasVariables agora:variables-group ;
+    healthdcatap:populationCoverage "Children with congenital malformations and their parents, treated at Radboudumc in the Netherlands."@en ;
+    dcat:distribution agora:distribution-hdab ;
+    dpv:hasPurpose agora:purpose ;
+    dpv:hasLegalBasis [
+        a dpv:LegalBasis ;
+        dct:description "Processing is based on the EHDS Regulation (EU) 2025/327 for secondary use of health data, and applicable national legislation in the Netherlands governing biobank and registry research."@en
+    ] ;
+    dpv:hasPersonalData <https://w3id.org/dpv/dpv-pd#Gender>, <https://w3id.org/dpv/dpv-pd#Age>, <https://w3id.org/dpv/dpv-pd#HealthRecord> ;
+    healthdcatap:minTypicalAge "0"^^xsd:nonNegativeInteger ;
+    healthdcatap:maxTypicalAge "18"^^xsd:nonNegativeInteger ;
+    healthdcatap:numberOfRecords "3500"^^xsd:nonNegativeInteger ;
+    healthdcatap:numberOfUniqueIndividuals "3500"^^xsd:nonNegativeInteger ;
+    healthdcatap:retentionPeriod [
+        a dct:PeriodOfTime ;
+        dcat:startDate "2003-01-01"^^xsd:date ;
+        dcat:endDate "2030-12-31"^^xsd:date
+    ] ;
+    adms:sample agora:sample-distribution ;
+    healthdcatap:analytics agora:analytics-distribution ;
+    dqv:hasQualityAnnotation [
+        a dqv:QualityCertificate ;
+        oa:motivatedBy dqv:qualityAssessment ;
+        oa:hasBody <https://eu-rd-platform.jrc.ec.europa.eu/mdr/detail/AGORA>
+    ] ;
+    prov:wasGeneratedBy agora:generation-activity .
+
+# --- Dataset Contact Point ---
+agora:dataset-contact-point
+    a vcard:Kind ;
+    vcard:hasURL <https://european-union.europa.eu/> ;
+    vcard:hasEmail <mailto:union_body@europa.eu> .
+
+# --- Provenance ---
+agora:provenance
+    a dct:ProvenanceStatement ;
+    rdfs:label "The causes of most congenital malformations are largely unknown. Both genetic predisposition and circumstances shortly before and during pregnancy may play a role. Data is collected from patients with congenital malformations and their parents at Radboudumc. Blood samples are drawn and parents complete questionnaires about circumstances around pregnancy. Data providers include university hospitals, non-university hospitals, patients, families and research institutions."@en .
+
+# --- Purpose ---
+agora:purpose
+    a dpv:Purpose ;
+    dct:description "Secondary-use research into the aetiologic, genetic and occupational/environmental risk factors for congenital anomalies in children, including identification of causes and long-term consequences of malformations."@en .
+
+# --- Generation Activity ---
+agora:generation-activity
+    a prov:Activity ;
+    rdfs:label "Patient registry data collection through clinical encounters and questionnaires"@en ;
+    dct:type <https://hdeu-dcat.data.health.europa.eu/resource/authority/health-activity/ROUTINE_RECORDS> .
+
+# --- Distribution (HDAB access) ---
+agora:distribution-hdab
+    a dcat:Distribution ;
+    dct:title "AGORA Registry Data Access via HDAB"@en ;
+    dct:description "Access to the AGORA registry data is provided through the EU RD Platform Health Data Access Body. Access is conditional on approval of a data request application."@en ;
+    dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj> ;
+    dcat:accessURL <https://eu-rd-platform.jrc.ec.europa.eu/erdridor/register/6351> ;
+    dct:format <http://publications.europa.eu/resource/authority/file-type/HTML> ;
+    dcatap:availability <http://publications.europa.eu/resource/authority/planned-availability/AVAILABLE> ;
+    dct:license <http://publications.europa.eu/resource/authority/licence/CC_BY_4_0> ;
+    dct:rights [
+        a dct:RightsStatement ;
+        rdfs:label "Access to data is conditional on the issuance of a permit by the HDAB after submission of a data request application."@en
+    ] .
+
+# --- Sample Distribution ---
+agora:sample-distribution
+    a dcat:Distribution ;
+    dct:title "AGORA Registry Sample Data"@en ;
+    dct:description "Synthetic sample data representing the structure of the AGORA registry variables."@en ;
+    dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj> ;
+    dcat:accessURL <https://eu-rd-platform.jrc.ec.europa.eu/erdridor/register/6351> ;
+    dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
+    dcatap:availability <http://publications.europa.eu/resource/authority/planned-availability/AVAILABLE> ;
+    dct:license <http://publications.europa.eu/resource/authority/licence/CC_BY_4_0> ;
+    adms:status <http://publications.europa.eu/resource/authority/distribution-status/COMPLETED> .
+
+# --- Analytics Distribution ---
+agora:analytics-distribution
+    a dcat:Distribution ;
+    dct:title "AGORA Registry Analytics Report"@en ;
+    dct:description "Summary statistics and data quality report for the AGORA registry."@en ;
+    dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj> ;
+    dcat:accessURL <https://eu-rd-platform.jrc.ec.europa.eu/erdridor/register/6351> ;
+    dct:format <http://publications.europa.eu/resource/authority/file-type/HTML> ;
+    dcatap:availability <http://publications.europa.eu/resource/authority/planned-availability/AVAILABLE> ;
+    dct:license <http://publications.europa.eu/resource/authority/licence/CC_BY_4_0> .
+
+# =============================================================================
+# AGORA VARIABLES (89 variables) - CSVW model per HealthDCAT-AP Section 7.14
+# Source: https://eu-rd-platform.jrc.ec.europa.eu/mdr/detail/AGORA
+# =============================================================================
+
+# --- CSVW TableGroup ---
+agora:variables-group
+    a csvw:TableGroup ;
+    dct:title "AGORA data- and biobank"@en ;
+    csvw:table agora:table-demographics ,
+        agora:table-digestive ,
+        agora:table-abdominal-respiratory ,
+        agora:table-genitourinary ,
+        agora:table-renal ,
+        agora:table-schisis ,
+        agora:table-cardiac ,
+        agora:table-skeletal ,
+        agora:table-cns ,
+        agora:table-gynaecological ,
+        agora:table-other-diagnosis ,
+        agora:table-other-details ,
+        agora:table-sample .
+
+# --- Table 1: Demographics (5 variables) ---
+agora:table-demographics
+    a csvw:Table ;
+    dct:title "Demographics"@en ;
+    dcat:keyword "demographics"@en, "patient identification"@en ;
+    csvw:column agora:col-monthofbirth, agora:col-yearofbirth, agora:col-gender,
+        agora:col-informedconsent, agora:col-iservragenlijst .
+
+agora:col-monthofbirth a csvw:Column ;
+    csvw:name "monthofbirth" ;
+    csvw:title "Month of birth"@en ;
+    csvw:datatype "integer" ;
+    dct:description "Patient's month of birth."@en .
+
+agora:col-yearofbirth a csvw:Column ;
+    csvw:name "yearofbirth" ;
+    csvw:title "Year of birth"@en ;
+    csvw:datatype "integer" ;
+    dct:description "Patient's year of birth."@en .
+
+agora:col-gender a csvw:Column ;
+    csvw:name "gender" ;
+    csvw:title "Gender"@en ;
+    csvw:datatype "string" ;
+    dct:description "Patient's sex at birth."@en .
+
+agora:col-informedconsent a csvw:Column ;
+    csvw:name "informedconsent" ;
+    csvw:title "Informed consent"@en ;
+    csvw:datatype "string" ;
+    dct:description "Is informed consent present?"@en .
+
+agora:col-iservragenlijst a csvw:Column ;
+    csvw:name "iservragenlijst" ;
+    csvw:title "Is a questionnaire present?"@en ;
+    csvw:datatype "string" ;
+    dct:description "Is a questionnaire present?"@en .
+
+# --- Table 2: Digestive organ malformations (7 variables) ---
+agora:table-digestive
+    a csvw:Table ;
+    dct:title "Malformations digestive organs"@en ;
+    dcat:keyword "digestive"@en, "anorectal"@en, "malformation"@en ;
+    csvw:column agora:col-afwspijs, agora:col-detailanorectmalf,
+        agora:col-detailanorectmalfspec, agora:col-tracheoesofagfistel,
+        agora:col-galgangatresie, agora:col-afwspijsanders, agora:col-afwspijsandersspec .
+
+agora:col-afwspijs a csvw:Column ;
+    csvw:name "afwspijs" ;
+    csvw:title "Are there digestive organ abnormalities?"@en ;
+    csvw:datatype "string" ;
+    dct:description "Indicates presence of digestive organ abnormalities."@en .
+
+agora:col-detailanorectmalf a csvw:Column ;
+    csvw:name "detailanorectmalf" ;
+    csvw:title "Detail anorectal malformation"@en ;
+    csvw:datatype "string" ;
+    dct:description "Detail of anorectal malformation type."@en .
+
+agora:col-detailanorectmalfspec a csvw:Column ;
+    csvw:name "detailanorectmalfspec" ;
+    csvw:title "Specification details anorectal malformation"@en ;
+    csvw:datatype "string" ;
+    dct:description "Specification details of anorectal malformation."@en .
+
+agora:col-tracheoesofagfistel a csvw:Column ;
+    csvw:name "tracheoesofagfistel" ;
+    csvw:title "Tracheoesophageal fistula"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of tracheoesophageal fistula."@en .
+
+agora:col-galgangatresie a csvw:Column ;
+    csvw:name "galgangatresie" ;
+    csvw:title "Bile duct atresia"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of bile duct atresia."@en .
+
+agora:col-afwspijsanders a csvw:Column ;
+    csvw:name "afwspijsanders" ;
+    csvw:title "Other digestive organ abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Other digestive organ abnormalities not listed above."@en .
+
+agora:col-afwspijsandersspec a csvw:Column ;
+    csvw:name "afwspijsandersspec" ;
+    csvw:title "Specification other digestive organ abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Free text specification of other digestive organ abnormalities."@en .
+
+# --- Table 3: Abdominal and respiratory tract (3 variables) ---
+agora:table-abdominal-respiratory
+    a csvw:Table ;
+    dct:title "Abnormalities abdominal and respiratory tract"@en ;
+    dcat:keyword "abdominal"@en, "respiratory"@en ;
+    csvw:column agora:col-afwbuik, agora:col-afwbuikanders, agora:col-afwbuikandersspec .
+
+agora:col-afwbuik a csvw:Column ;
+    csvw:name "afwbuik" ;
+    csvw:title "Are there abdominal and respiratory tract abnormalities?"@en ;
+    csvw:datatype "string" ;
+    dct:description "Indicates presence of abdominal and respiratory tract abnormalities."@en .
+
+agora:col-afwbuikanders a csvw:Column ;
+    csvw:name "afwbuikanders" ;
+    csvw:title "Other abdominal and respiratory tract abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Other abdominal and respiratory tract abnormalities."@en .
+
+agora:col-afwbuikandersspec a csvw:Column ;
+    csvw:name "afwbuikandersspec" ;
+    csvw:title "Specification other abdominal and respiratory tract abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Free text specification of other abdominal and respiratory tract abnormalities."@en .
+
+# --- Table 4: Genitourinary system (10 variables) ---
+agora:table-genitourinary
+    a csvw:Table ;
+    dct:title "Genitourinary system"@en ;
+    dcat:keyword "genitourinary"@en, "urogenital"@en ;
+    csvw:column agora:col-afwurogen, agora:col-hypospadie,
+        agora:col-vesicoureteralerefluxspec, agora:col-graadvur,
+        agora:col-uterusafwijkingen, agora:col-utriculuscyste,
+        agora:col-variocele, agora:col-incontinentie,
+        agora:col-afwurogenanders, agora:col-afwurogenandersspec .
+
+agora:col-afwurogen a csvw:Column ;
+    csvw:name "afwurogen" ;
+    csvw:title "Are there genitourinary system abnormalities?"@en ;
+    csvw:datatype "string" ;
+    dct:description "Indicates presence of genitourinary system abnormalities."@en .
+
+agora:col-hypospadie a csvw:Column ;
+    csvw:name "hypospadie" ;
+    csvw:title "Hypospadias"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of hypospadias."@en .
+
+agora:col-vesicoureteralerefluxspec a csvw:Column ;
+    csvw:name "vesicoureteralerefluxspec" ;
+    csvw:title "Vesicoureteral reflux (VUR)"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of vesicoureteral reflux."@en .
+
+agora:col-graadvur a csvw:Column ;
+    csvw:name "graadvur" ;
+    csvw:title "Grade VUR"@en ;
+    csvw:datatype "string" ;
+    dct:description "Grade of vesicoureteral reflux."@en .
+
+agora:col-uterusafwijkingen a csvw:Column ;
+    csvw:name "uterusafwijkingen" ;
+    csvw:title "Uterine abnormality"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of uterine abnormality."@en .
+
+agora:col-utriculuscyste a csvw:Column ;
+    csvw:name "utriculuscyste" ;
+    csvw:title "Utricle cyst"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of utricle cyst."@en .
+
+agora:col-variocele a csvw:Column ;
+    csvw:name "variocele" ;
+    csvw:title "Varicocele"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of varicocele."@en .
+
+agora:col-incontinentie a csvw:Column ;
+    csvw:name "incontinentie" ;
+    csvw:title "Incontinence"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of incontinence."@en .
+
+agora:col-afwurogenanders a csvw:Column ;
+    csvw:name "afwurogenanders" ;
+    csvw:title "Other genitourinary system abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Other genitourinary system abnormalities."@en .
+
+agora:col-afwurogenandersspec a csvw:Column ;
+    csvw:name "afwurogenandersspec" ;
+    csvw:title "Specification other genitourinary system abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Free text specification of other genitourinary system abnormalities."@en .
+
+# --- Table 5: Renal abnormalities (9 variables) ---
+agora:table-renal
+    a csvw:Table ;
+    dct:title "Renal abnormalities"@en ;
+    dcat:keyword "renal"@en, "kidney"@en ;
+    csvw:column agora:col-afwnier, agora:col-nierplaats, agora:col-upjstenose,
+        agora:col-momdiaghydronef, agora:col-dubbelsysteem,
+        agora:col-nierinsufficientie, agora:col-afunctionelenier,
+        agora:col-afwnierenanders, agora:col-afwnierenandersspec .
+
+agora:col-afwnier a csvw:Column ;
+    csvw:name "afwnier" ;
+    csvw:title "Are there renal abnormalities?"@en ;
+    csvw:datatype "string" ;
+    dct:description "Indicates presence of renal abnormalities."@en .
+
+agora:col-nierplaats a csvw:Column ;
+    csvw:name "nierplaats" ;
+    csvw:title "Location renal/urogenic abnormality"@en ;
+    csvw:datatype "string" ;
+    dct:description "Location of renal or urogenic abnormality."@en .
+
+agora:col-upjstenose a csvw:Column ;
+    csvw:name "upjstenose" ;
+    csvw:title "UPJ stenosis"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of UPJ stenosis."@en .
+
+agora:col-momdiaghydronef a csvw:Column ;
+    csvw:name "momdiaghydronef" ;
+    csvw:title "Moment of hydronephrosis diagnosis"@en ;
+    csvw:datatype "string" ;
+    dct:description "Moment of hydronephrosis diagnosis."@en .
+
+agora:col-dubbelsysteem a csvw:Column ;
+    csvw:name "dubbelsysteem" ;
+    csvw:title "Duplicated collecting system"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of duplicated collecting system."@en .
+
+agora:col-nierinsufficientie a csvw:Column ;
+    csvw:name "nierinsufficientie" ;
+    csvw:title "Renal insufficiency"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of renal insufficiency."@en .
+
+agora:col-afunctionelenier a csvw:Column ;
+    csvw:name "afunctionelenier" ;
+    csvw:title "Afunctional kidney"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of afunctional kidney."@en .
+
+agora:col-afwnierenanders a csvw:Column ;
+    csvw:name "afwnierenanders" ;
+    csvw:title "Other renal abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Other renal abnormalities."@en .
+
+agora:col-afwnierenandersspec a csvw:Column ;
+    csvw:name "afwnierenandersspec" ;
+    csvw:title "Specification other renal abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Free text specification of other renal abnormalities."@en .
+
+# --- Table 6: Schisis (5 variables) ---
+agora:table-schisis
+    a csvw:Table ;
+    dct:title "Schisis"@en ;
+    dcat:keyword "schisis"@en, "cleft"@en ;
+    csvw:column agora:col-afwschisis, agora:col-cheiloschisis,
+        agora:col-pierrerobinsequentie, agora:col-afwschisisanders,
+        agora:col-afwschisisandersspec .
+
+agora:col-afwschisis a csvw:Column ;
+    csvw:name "afwschisis" ;
+    csvw:title "Are there schismatic abnormalities?"@en ;
+    csvw:datatype "string" ;
+    dct:description "Indicates presence of schismatic abnormalities."@en .
+
+agora:col-cheiloschisis a csvw:Column ;
+    csvw:name "cheiloschisis" ;
+    csvw:title "Cheiloschisis"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of cheiloschisis (cleft lip)."@en .
+
+agora:col-pierrerobinsequentie a csvw:Column ;
+    csvw:name "pierrerobinsequentie" ;
+    csvw:title "Pierre Robin Sequence"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of Pierre Robin Sequence."@en .
+
+agora:col-afwschisisanders a csvw:Column ;
+    csvw:name "afwschisisanders" ;
+    csvw:title "Other schismatic abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Other schismatic abnormalities."@en .
+
+agora:col-afwschisisandersspec a csvw:Column ;
+    csvw:name "afwschisisandersspec" ;
+    csvw:title "Specification other schismatic abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Free text specification of other schismatic abnormalities."@en .
+
+# --- Table 7: Cardiac abnormalities (3 variables) ---
+agora:table-cardiac
+    a csvw:Table ;
+    dct:title "Cardiac abnormalities"@en ;
+    dcat:keyword "cardiac"@en, "heart"@en ;
+    csvw:column agora:col-afwhart, agora:col-afwhartanders, agora:col-afwhartandersspec .
+
+agora:col-afwhart a csvw:Column ;
+    csvw:name "afwhart" ;
+    csvw:title "Are there any cardiac abnormalities?"@en ;
+    csvw:datatype "string" ;
+    dct:description "Indicates presence of cardiac abnormalities."@en .
+
+agora:col-afwhartanders a csvw:Column ;
+    csvw:name "afwhartanders" ;
+    csvw:title "Other cardiac abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Other cardiac abnormalities."@en .
+
+agora:col-afwhartandersspec a csvw:Column ;
+    csvw:name "afwhartandersspec" ;
+    csvw:title "Specification cardiac abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Free text specification of cardiac abnormalities."@en .
+
+# --- Table 8: Skeletal abnormalities (20 variables) ---
+agora:table-skeletal
+    a csvw:Table ;
+    dct:title "Skeletal abnormalities"@en ;
+    dcat:keyword "skeletal"@en, "vertebral"@en, "extremity"@en ;
+    csvw:column agora:col-afwskelet, agora:col-wervelafwijkingen,
+        agora:col-werveltypevlinder, agora:col-werveltypeanders,
+        agora:col-werveltypeandersspec, agora:col-ribafwijkingen,
+        agora:col-ribafwanders, agora:col-ribafwandersspec,
+        agora:col-extremiteitsafwijkingen, agora:col-reductiedefect,
+        agora:col-polydactylie, agora:col-oligodactylie,
+        agora:col-syndactylie, agora:col-ectrodactylie,
+        agora:col-klompvoet, agora:col-heupdysplasie,
+        agora:col-extrafwanders, agora:col-extrafwandersspec,
+        agora:col-afwskeletanders, agora:col-afwskeletandersspec .
+
+agora:col-afwskelet a csvw:Column ;
+    csvw:name "afwskelet" ;
+    csvw:title "Are there any skeletal abnormalities?"@en ;
+    csvw:datatype "string" ;
+    dct:description "Indicates presence of skeletal abnormalities."@en .
+
+agora:col-wervelafwijkingen a csvw:Column ;
+    csvw:name "wervelafwijkingen" ;
+    csvw:title "Vertebral abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of vertebral abnormalities."@en .
+
+agora:col-werveltypevlinder a csvw:Column ;
+    csvw:name "werveltypevlinder" ;
+    csvw:title "Butterfly vertebrae"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of butterfly vertebrae."@en .
+
+agora:col-werveltypeanders a csvw:Column ;
+    csvw:name "werveltypeanders" ;
+    csvw:title "Other vertebral abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Other vertebral abnormalities."@en .
+
+agora:col-werveltypeandersspec a csvw:Column ;
+    csvw:name "werveltypeandersspec" ;
+    csvw:title "Specification other vertebral abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Free text specification of other vertebral abnormalities."@en .
+
+agora:col-ribafwijkingen a csvw:Column ;
+    csvw:name "ribafwijkingen" ;
+    csvw:title "Rib abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of rib abnormalities."@en .
+
+agora:col-ribafwanders a csvw:Column ;
+    csvw:name "ribafwanders" ;
+    csvw:title "Other rib abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Other rib abnormalities."@en .
+
+agora:col-ribafwandersspec a csvw:Column ;
+    csvw:name "ribafwandersspec" ;
+    csvw:title "Specification other rib abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Free text specification of other rib abnormalities."@en .
+
+agora:col-extremiteitsafwijkingen a csvw:Column ;
+    csvw:name "extremiteitsafwijkingen" ;
+    csvw:title "Extremity abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of extremity abnormalities."@en .
+
+agora:col-reductiedefect a csvw:Column ;
+    csvw:name "reductiedefect" ;
+    csvw:title "Reduction defect"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of reduction defect."@en .
+
+agora:col-polydactylie a csvw:Column ;
+    csvw:name "polydactylie" ;
+    csvw:title "Polydactyly"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of polydactyly."@en .
+
+agora:col-oligodactylie a csvw:Column ;
+    csvw:name "oligodactylie" ;
+    csvw:title "Oligodactyly"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of oligodactyly."@en .
+
+agora:col-syndactylie a csvw:Column ;
+    csvw:name "syndactylie" ;
+    csvw:title "Syndactyly"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of syndactyly."@en .
+
+agora:col-ectrodactylie a csvw:Column ;
+    csvw:name "ectrodactylie" ;
+    csvw:title "Ectrodactyly"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of ectrodactyly."@en .
+
+agora:col-klompvoet a csvw:Column ;
+    csvw:name "klompvoet" ;
+    csvw:title "Clubfoot"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of clubfoot."@en .
+
+agora:col-heupdysplasie a csvw:Column ;
+    csvw:name "heupdysplasie" ;
+    csvw:title "Hip dysplasia"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of hip dysplasia."@en .
+
+agora:col-extrafwanders a csvw:Column ;
+    csvw:name "extrafwanders" ;
+    csvw:title "Other extremity abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Other extremity abnormalities."@en .
+
+agora:col-extrafwandersspec a csvw:Column ;
+    csvw:name "extrafwandersspec" ;
+    csvw:title "Specification other extremity abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Free text specification of other extremity abnormalities."@en .
+
+agora:col-afwskeletanders a csvw:Column ;
+    csvw:name "afwskeletanders" ;
+    csvw:title "Other skeletal abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Other skeletal abnormalities."@en .
+
+agora:col-afwskeletandersspec a csvw:Column ;
+    csvw:name "afwskeletandersspec" ;
+    csvw:title "Specification other skeletal abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Free text specification of other skeletal abnormalities."@en .
+
+# --- Table 9: CNS abnormalities (8 variables) ---
+agora:table-cns
+    a csvw:Table ;
+    dct:title "CNS abnormalities"@en ;
+    dcat:keyword "CNS"@en, "central nervous system"@en, "neural tube"@en ;
+    csvw:column agora:col-afwcns, agora:col-spinabifidameningomyeloc,
+        agora:col-anencefalie, agora:col-encefalocele,
+        agora:col-microcephalie, agora:col-intraspinaallipoom,
+        agora:col-afwcnsanders, agora:col-afwcnsandersspec .
+
+agora:col-afwcns a csvw:Column ;
+    csvw:name "afwcns" ;
+    csvw:title "Are there any CNS abnormalities?"@en ;
+    csvw:datatype "string" ;
+    dct:description "Indicates presence of central nervous system abnormalities."@en .
+
+agora:col-spinabifidameningomyeloc a csvw:Column ;
+    csvw:name "spinabifidameningomyeloc" ;
+    csvw:title "Spina bifida/meningomyelocele"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of spina bifida or meningomyelocele."@en .
+
+agora:col-anencefalie a csvw:Column ;
+    csvw:name "anencefalie" ;
+    csvw:title "Anencephaly"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of anencephaly."@en .
+
+agora:col-encefalocele a csvw:Column ;
+    csvw:name "encefalocele" ;
+    csvw:title "Encephalocele"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of encephalocele."@en .
+
+agora:col-microcephalie a csvw:Column ;
+    csvw:name "microcephalie" ;
+    csvw:title "Microcephaly"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of microcephaly."@en .
+
+agora:col-intraspinaallipoom a csvw:Column ;
+    csvw:name "intraspinaallipoom" ;
+    csvw:title "Intraspinal lipoma"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of intraspinal lipoma."@en .
+
+agora:col-afwcnsanders a csvw:Column ;
+    csvw:name "afwcnsanders" ;
+    csvw:title "Other CNS abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Other central nervous system abnormalities."@en .
+
+agora:col-afwcnsandersspec a csvw:Column ;
+    csvw:name "afwcnsandersspec" ;
+    csvw:title "Specification other CNS abnormality"@en ;
+    csvw:datatype "string" ;
+    dct:description "Free text specification of other CNS abnormalities."@en .
+
+# --- Table 10: Gynaecological abnormalities (7 variables) ---
+agora:table-gynaecological
+    a csvw:Table ;
+    dct:title "Gynaecological abnormalities"@en ;
+    dcat:keyword "gynaecological"@en, "uterine"@en, "cervical"@en ;
+    csvw:column agora:col-afwgyn, agora:col-uterusafw, agora:col-uterusafwspec,
+        agora:col-cervixafw, agora:col-cervixafwspec,
+        agora:col-vaginaafw, agora:col-vaginaafwspec .
+
+agora:col-afwgyn a csvw:Column ;
+    csvw:name "afwgyn" ;
+    csvw:title "Are there gynaecological abnormalities?"@en ;
+    csvw:datatype "string" ;
+    dct:description "Indicates presence of gynaecological abnormalities."@en .
+
+agora:col-uterusafw a csvw:Column ;
+    csvw:name "uterusafw" ;
+    csvw:title "Uterine abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of uterine abnormalities."@en .
+
+agora:col-uterusafwspec a csvw:Column ;
+    csvw:name "uterusafwspec" ;
+    csvw:title "Specification uterine abnormality"@en ;
+    csvw:datatype "string" ;
+    dct:description "Specification of uterine abnormality."@en .
+
+agora:col-cervixafw a csvw:Column ;
+    csvw:name "cervixafw" ;
+    csvw:title "Cervical abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of cervical abnormalities."@en .
+
+agora:col-cervixafwspec a csvw:Column ;
+    csvw:name "cervixafwspec" ;
+    csvw:title "Specification cervical abnormality"@en ;
+    csvw:datatype "string" ;
+    dct:description "Specification of cervical abnormality."@en .
+
+agora:col-vaginaafw a csvw:Column ;
+    csvw:name "vaginaafw" ;
+    csvw:title "Vagina abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of vagina abnormalities."@en .
+
+agora:col-vaginaafwspec a csvw:Column ;
+    csvw:name "vaginaafwspec" ;
+    csvw:title "Specification vagina abnormalities"@en ;
+    csvw:datatype "string" ;
+    dct:description "Specification of vagina abnormalities."@en .
+
+# --- Table 11: Other diagnosis (2 variables) ---
+agora:table-other-diagnosis
+    a csvw:Table ;
+    dct:title "Other diagnosis"@en ;
+    dcat:keyword "diagnosis"@en ;
+    csvw:column agora:col-afwandercat, agora:col-afwandercatspec .
+
+agora:col-afwandercat a csvw:Column ;
+    csvw:name "afwandercat" ;
+    csvw:title "Other diagnosis category"@en ;
+    csvw:datatype "string" ;
+    dct:description "Other diagnosis category."@en .
+
+agora:col-afwandercatspec a csvw:Column ;
+    csvw:name "afwandercatspec" ;
+    csvw:title "Specification other diagnosis category"@en ;
+    csvw:datatype "string" ;
+    dct:description "Free text specification of other diagnosis category."@en .
+
+# --- Table 12: Other details diagnosis (7 variables) ---
+agora:table-other-details
+    a csvw:Table ;
+    dct:title "Other details diagnosis"@en ;
+    dcat:keyword "genetics"@en, "syndrome"@en, "VACTERL"@en ;
+    csvw:column agora:col-genetischonderz, agora:col-uitslaggenonderz,
+        agora:col-syndroomassociatie, agora:col-syndroomassociatiespec,
+        agora:col-vacterl, agora:col-familiairvoorkomenaand,
+        agora:col-bijwieinfamilie .
+
+agora:col-genetischonderz a csvw:Column ;
+    csvw:name "genetischonderz" ;
+    csvw:title "Genetic research performed"@en ;
+    csvw:datatype "string" ;
+    dct:description "Indicates whether genetic research was performed."@en .
+
+agora:col-uitslaggenonderz a csvw:Column ;
+    csvw:name "uitslaggenonderz" ;
+    csvw:title "Result genetic research"@en ;
+    csvw:datatype "string" ;
+    dct:description "Result of genetic research."@en .
+
+agora:col-syndroomassociatie a csvw:Column ;
+    csvw:name "syndroomassociatie" ;
+    csvw:title "Syndrome/association"@en ;
+    csvw:datatype "string" ;
+    dct:description "Presence of syndrome or association."@en .
+
+agora:col-syndroomassociatiespec a csvw:Column ;
+    csvw:name "syndroomassociatiespec" ;
+    csvw:title "Which syndrome/association?"@en ;
+    csvw:datatype "string" ;
+    dct:description "Specification of which syndrome or association."@en .
+
+agora:col-vacterl a csvw:Column ;
+    csvw:name "vacterl" ;
+    csvw:title "Is there any evidence of VACTERL?"@en ;
+    csvw:datatype "string" ;
+    dct:description "Evidence of VACTERL association."@en .
+
+agora:col-familiairvoorkomenaand a csvw:Column ;
+    csvw:name "familiairvoorkomenaand" ;
+    csvw:title "Familial occurrence of disorder"@en ;
+    csvw:datatype "string" ;
+    dct:description "Indicates familial occurrence of the disorder."@en .
+
+agora:col-bijwieinfamilie a csvw:Column ;
+    csvw:name "bijwieinfamilie" ;
+    csvw:title "Family member with disorder"@en ;
+    csvw:datatype "string" ;
+    dct:description "Which family member has the disorder."@en .
+
+# --- Table 13: Sample/cell line (3 variables) ---
+agora:table-sample
+    a csvw:Table ;
+    dct:title "Sample/cell line"@en ;
+    dcat:keyword "sample"@en, "DNA"@en, "biobank"@en ;
+    csvw:column agora:col-codesampledna, agora:col-typecel, agora:col-datumvanafnamesample .
+
+agora:col-codesampledna a csvw:Column ;
+    csvw:name "codesampledna" ;
+    csvw:title "Code sample DNA"@en ;
+    csvw:datatype "string" ;
+    dct:description "Code identifying the DNA sample."@en .
+
+agora:col-typecel a csvw:Column ;
+    csvw:name "typecel" ;
+    csvw:title "Type of cell"@en ;
+    csvw:datatype "string" ;
+    dct:description "Type of cell in the sample."@en .
+
+agora:col-datumvanafnamesample a csvw:Column ;
+    csvw:name "datumvanafnamesample" ;
+    csvw:title "Date withdrawal sample"@en ;
+    csvw:datatype "date" ;
+    dct:description "Date of sample withdrawal."@en .
+
+# =============================================================================
+# Type declarations for controlled vocabulary instances
+# =============================================================================
+
+<http://data.europa.eu/eli/reg/2025/327/oj>
+    a eli:LegalResource .
+
+<http://publications.europa.eu/resource/authority/access-right/PUBLIC>
+    a skos:Concept, dct:RightsStatement ;
+    skos:prefLabel "Public"@en .
+
+<http://publications.europa.eu/resource/authority/language/ENG>
+    a dct:LinguisticSystem .
+
+<http://publications.europa.eu/resource/authority/country/NLD>
+    a dct:Location ;
+    dcat:bbox "POLYGON((3.37 50.75, 7.21 50.75, 7.21 53.47, 3.37 53.47, 3.37 50.75))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ;
+    dcat:centroid "POINT(5.29 52.13)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
+
+<http://publications.europa.eu/resource/authority/data-theme/HEAL>
+    a skos:Concept ;
+    skos:prefLabel "Health"@en .
+
+<http://publications.europa.eu/resource/authority/dataset-type/STATISTICAL>
+    a skos:Concept ;
+    skos:prefLabel "Statistical"@en .
+
+<http://publications.europa.eu/resource/authority/file-type/HTML>
+    a dct:MediaTypeOrExtent .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/healthcategories/MRMR>
+    a skos:Concept ;
+    skos:prefLabel "Data from medical registries and mortality registries"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/health-theme/NONCOMMUNICABLE_DISEASES>
+    a skos:Concept ;
+    skos:prefLabel "Noncommunicable Diseases"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/health-activity/ROUTINE_RECORDS>
+    a skos:Concept ;
+    skos:prefLabel "Routine Records"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type/research-institute-org>
+    a skos:Concept ;
+    skos:prefLabel "Research Institute or Organisation"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type/non-gov-org>
+    a skos:Concept ;
+    skos:prefLabel "Non-governmental Organisation"@en .
+
+<https://eu-rd-platform.jrc.ec.europa.eu/erdridor/register/6351>
+    a foaf:Document .
+
+<https://european-union.europa.eu/>
+    a foaf:Document .
+
+<https://www.agoraproject.nl/>
+    a foaf:Document .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system/ORPHACODE>
+    a dct:Standard .
+
+<http://publications.europa.eu/resource/authority/planned-availability/AVAILABLE>
+    a skos:Concept ;
+    skos:prefLabel "Available"@en .
+
+<http://publications.europa.eu/resource/authority/licence/CC_BY_4_0>
+    a dct:LicenseDocument ;
+    dct:type <http://purl.org/adms/licencetype/Attribution> .
+
+<http://publications.europa.eu/resource/authority/distribution-status/COMPLETED>
+    a skos:Concept ;
+    skos:prefLabel "Completed"@en .
+
+<http://publications.europa.eu/resource/authority/file-type/CSV>
+    a dct:MediaTypeOrExtent .
+
+<https://w3id.org/dpv/dpv-pd#Gender>
+    a dpv:PersonalData .
+
+<https://w3id.org/dpv/dpv-pd#Age>
+    a dpv:PersonalData .
+
+<https://w3id.org/dpv/dpv-pd#HealthRecord>
+    a dpv:PersonalData .

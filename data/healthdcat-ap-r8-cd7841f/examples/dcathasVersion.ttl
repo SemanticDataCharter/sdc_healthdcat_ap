@@ -1,0 +1,11 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<https://fair.healthdata.be/dataset/d43a158e-7d13-4660-bbc3-9d3f8d5501e5>
+    a dcat:Dataset ;
+    dct:title "Health Data 2023" ;
+    dcat:hasVersion <https://fair.healthdata.be/dataset/v2-d43a158e-7d13-4660-bbc3-9d3f8d5501e5> .
+
+<https://fair.healthdata.be/dataset/v2-d43a158e-7d13-4660-bbc3-9d3f8d5501e5>
+    a dcat:Dataset ;  
+    dct:title "Health Data 2023 - Version 2"  .

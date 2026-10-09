@@ -1,0 +1,4 @@
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+
+<https://fair.healthdata.be/dataset/d43a158e-7d13-4660-bbc3-9d3f8d5501e5>
+    healthdcatap:publisherNote "Sciensano is a research institute and the national public health institute of Belgium. It is a so-called federal scientific institution that operates under the authority of the federal minister of Public Health and the federal minister of Agriculture of Belgium."@en .
