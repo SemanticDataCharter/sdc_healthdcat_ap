@@ -48,8 +48,38 @@ def test_the_catalog_passes_the_validators_non_public_shape_set_in_turtle_and_js
         assert ok and not violations, (fmt, violations[:5])
         # the warnings are the recommended properties the package does not carry, and the publisher outside the Corporate Bodies NAL
         paths = Counter(r[2].rsplit("/", 1)[-1].rsplit("#", 1)[-1] for r in res)
-        assert set(paths) <= {"publisher", "analytics", "retentionPeriod", "accrualPeriodicity", "conformsTo", "isReferencedBy", "relation",
+        assert set(paths) <= {"analytics", "retentionPeriod", "accrualPeriodicity", "conformsTo", "isReferencedBy", "relation",
                               "source", "temporal", "sample", "temporalResolution"}, paths
+
+
+def test_the_document_is_the_dataset_with_no_catalog_wrapper(graph):
+    """As the release's own examples are: with DCAT loaded, a validator reads a dcat:Catalog as a dcat:Dataset and holds it
+    to the Dataset's mandatory list, so the wrapper stays out and the HealthData@EU catalogue is the catalogue."""
+    assert (None, RDF.type, DCAT.Catalog) not in graph
+    assert len(list(graph.subjects(RDF.type, DCAT.Dataset))) == 1
+
+
+@pytest.mark.network
+def test_the_interoperability_test_bed_agrees(graph):
+    """The Test Bed's generic SHACL validator, given the release's non-public shape set as external rules (the route the
+    specification's validation section names): no violation on any node of the document; the violations it reports are
+    on nodes it carries itself (ADMS concept schemes, unnamed blank agents), the same an empty catalog receives."""
+    import base64
+    import json
+    import urllib.request
+    from sdchealthdcatap.validate import level_files
+    rules = [{"ruleSet": base64.b64encode(f.read_bytes()).decode(), "embeddingMethod": "BASE64", "ruleSyntax": "text/turtle"}
+             for f in level_files(SNAPSHOT, "NON_PUBLIC") + [SNAPSHOT / "shacl" / "dcat-ap-SHACL.ttl", SNAPSHOT / "shacl" / "ranges.ttl"]]
+    body = {"contentToValidate": graph.serialize(format="turtle"), "contentSyntax": "text/turtle", "embeddingMethod": "STRING",
+            "validationType": "any", "externalRules": rules, "loadImports": False, "reportSyntax": "application/ld+json"}
+    req = urllib.request.Request("https://www.itb.ec.europa.eu/shacl/any/api/validate", data=json.dumps(body).encode(),
+                                 headers={"Content-Type": "application/json", "Accept": "application/ld+json"})
+    d = json.loads(urllib.request.urlopen(req, timeout=600).read().decode())
+    nodes = d.get("@graph", [d])
+    ours = {str(s) for s in graph.subjects()}
+    violations = [n for n in nodes if n.get("@type") == "sh:ValidationResult" and n["sh:resultSeverity"]["@id"] == "sh:Violation"
+                  and n.get("sh:focusNode", {}).get("@id", "") in ours]
+    assert not violations, violations[:3]
 
 
 def test_the_committed_samples_equal_a_fresh_run(graph):

@@ -76,6 +76,15 @@ def build_health_catalog(models: list[Model], declared: dict, today: date | None
     datasets = {str(g.value(ds, DCTERMS.identifier)): ds for ds in g.objects(catalog, DCAT.dataset)}
     for m in models:
         _health_layer(g, datasets[f"dm-{m.ct_id}"], m, declared, publisher, legislation)
+    # A HealthDCAT-AP document is the Dataset, as the release's own examples are. With DCAT loaded (dcat:Catalog is a
+    # subclass of dcat:Dataset), the validator reads a Catalog node as a Dataset and holds it to the Dataset's mandatory
+    # list, so the Catalog wrapper stays out; the HealthData@EU catalogue is the catalogue.
+    homepage = g.value(catalog, FOAF.homepage)
+    for t in list(g.triples((catalog, None, None))):
+        g.remove(t)
+    if homepage is not None and (None, None, homepage) not in g:
+        for t in list(g.triples((homepage, None, None))):
+            g.remove(t)
     return g
 
 

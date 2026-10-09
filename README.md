@@ -2,17 +2,17 @@
 
 One Semantic Data Charter model, described in HealthDCAT-AP.
 
-`sdchealthdcatap` reads a published SDC model's package and writes the `dcat:Catalog` that HealthDCAT-AP, the health
-extension of DCAT-AP for the secondary use of health data under the European Health Data Space, asks a data holder to
-publish for the HealthData@EU catalogue: one Dataset per model at a declared access level, its variables as a CSVW
+`sdchealthdcatap` reads a published SDC model's package and writes the `dcat:Dataset` description that HealthDCAT-AP,
+the health extension of DCAT-AP for the secondary use of health data under the European Health Data Space, asks a
+data holder to publish into the HealthData@EU catalogue: one Dataset per model at a declared access level, its variables as a CSVW
 table group built from the record's leaves, its coding systems from the model's bindings, and the holder's facts from
 declared input. One rdflib graph, serialized as Turtle and as JSON-LD. The output is checked with the HealthData@EU
 validator's own shape set for the level, at a pinned commit of the specification's repository.
 
 ## 1. What this is, and where it came from
 
-The sample, `samples/nhanes-participant/catalog.ttl` (and `catalog.jsonld`, the same graph), is a Catalog with one
-Dataset at the `NON_PUBLIC` access level: the records of **NHANES Participant** (`dm-xy8upneajsb8vdcmnve01g6g`) from
+The sample, `samples/nhanes-participant/catalog.ttl` (and `catalog.jsonld`, the same graph), is one Dataset at the
+`NON_PUBLIC` access level, with no catalogue wrapper, as the release's own examples are (part 4 says why): the records of **NHANES Participant** (`dm-xy8upneajsb8vdcmnve01g6g`) from
 the FAIR Data Demo, a demographic, examination and laboratory record of the National Health and Nutrition
 Examination Survey (CDC), 9,254 records, one per participant. The model is public:
 
@@ -75,16 +75,21 @@ pip install -e ".[dev]"
 python -m pytest tests -q
 ```
 
-Result at the pin, `NON_PUBLIC`, in Turtle and in JSON-LD: **0 violations, 12 warnings**. The warnings are the
-recommended properties the package does not carry (analytics, retention period, frequency, `dct:conformsTo` on the
-Dataset, references, relations, source, temporal coverage and resolution, a sample) and, twice, the Catalog's
-publisher outside the EU Corporate Bodies NAL (a company). The committed samples are asserted isomorphic to a fresh
-run. The release's own ARCA example, run the same way at `PUBLIC`, passes except where the background we carry
-stops (part 4).
+Result at the pin, `NON_PUBLIC`, in Turtle and in JSON-LD: **0 violations, 10 warnings**, the recommended
+properties the package does not carry (analytics, retention period, frequency, `dct:conformsTo` on the Dataset,
+references, relations, source, temporal coverage and resolution, a sample). The committed samples are asserted
+isomorphic to a fresh run. The release's own ARCA example, run the same way at `PUBLIC`, passes except where the
+background we carry stops (part 4).
 
-Second witness, the hosted HealthData@EU validator at https://data.health.europa.eu/validator/ (upload the Turtle,
-choose "HealthDCAT-AP NON_PUBLIC Data"): **to be run by hand and recorded here with the date.** It sits behind a
-single-page interface with no public REST path we found, so it is not in the tests.
+Second witness, the Interoperability Test Bed, which the specification's validation section names as where the
+shape and import files "can be loaded": its generic SHACL validator (https://www.itb.ec.europa.eu/shacl/any/upload,
+REST API `/shacl/any/api/validate`) given the release's non-public shape files as external rules, 9 October 2026:
+**no violation on any node of the document, 14 warnings** (the ten above, plus `dct:format` on the distribution,
+`dct:spatial`, and `dct:type` on the creator agent and the licence document). The 22 violations it also reports fall
+on nodes the Test Bed carries itself, six ADMS concept schemes without a title and five unnamed blank agents, each
+twice, the same an empty catalog receives on its DCAT-AP domain. The network-marked test asserts the first part;
+CI skips it. The HealthData@EU platform's own validator page was not reachable: both the production and the
+acceptance platforms answer 404 at the validator path, and the platform's public pages do not link one.
 
 ## 3. What the projection could not say
 
@@ -115,6 +120,12 @@ In the other direction, what the record carries that the catalog entry only poin
 Implementer's notes from building this against `healthdataeu/healthdcat-ap` at cd7841f on 9 October 2026. They
 describe how the artifacts behave, so the next implementer spends the day on their own catalog rather than on these.
 
+- **The document is the Dataset, not a Catalogue.** The release's examples are dataset-only, and the reason shows
+  under validation: with DCAT loaded as background (`dcat:Catalog` is a subclass of `dcat:Dataset`), a validator
+  reads a `dcat:Catalog` node as a Dataset and holds it to the Dataset's mandatory list, eleven violations on the
+  wrapper alone (contact point, distribution, keyword, theme, access rights, identifier, provenance, type, health
+  category, access body, the structured-data flag). The writer emits no Catalogue; the HealthData@EU catalogue is
+  the catalogue.
 - **The validator ships with the release, configured.** `html/shacl/HealthDCAT-AP_validator/config/rdf-validator/ehds/`
   holds `config.properties`, which names the shape files per access level, and the vocabularies and ontologies the
   validator preloads. Running that file set with pySHACL is running the validator's logic; the hosted instance adds

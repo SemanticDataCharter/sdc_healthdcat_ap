@@ -169,12 +169,22 @@ level's file set with the background loaded; the examples of the release as a sa
 
 - `samples/nhanes-participant/catalog.ttl` and `catalog.jsonld` (one graph, about 1,250 triples): a Catalog with one
   Dataset at `NON_PUBLIC`, 153 columns in its table group, coding systems SNOMED CT, LOINC and NCIT from the bindings.
-- The validator's non-public file set at cd7841f with pySHACL, the thirteen vocabularies loaded as background, SEMIC's
-  DCAT-AP shapes included: **0 violations, 12 warnings** (the recommended properties the package lacks, and the
-  Catalog's publisher outside the Corporate Bodies NAL), identical in Turtle and JSON-LD.
+- The validator's non-public file set at cd7841f with pySHACL, the vocabularies loaded as background, SEMIC's DCAT-AP
+  shapes included: **0 violations, 10 warnings** (the recommended properties the package lacks), identical in Turtle
+  and JSON-LD.
+- **Second witness done, 9 October:** the Interoperability Test Bed's generic SHACL validator with the release's
+  non-public shape files as external rules (the route the specification's validation section names): no violation on
+  any node of the document, 14 warnings; its 22 violations fall on nodes the Test Bed carries itself (ADMS concept
+  schemes without titles, unnamed blank agents), as on the DCAT-AP domain. The HealthData@EU platform's own validator
+  page could not be reached (404 on production and acceptance at the validator path; no public link), so the PRD's
+  "hosted validator by hand" became the Test Bed route.
+- **Changed while building, after the Test Bed run:** the document carries no `dcat:Catalog`. With DCAT loaded, a
+  validator reads the Catalog as a Dataset (subclass) and holds it to the Dataset's mandatory list; the release's
+  examples are dataset-only for the same reason. The Catalog-level facts in the declared input remain for the
+  publisher node.
 - The release's own ARCA example at `PUBLIC`, the same way: passes except its language and licence type, whose
   vocabularies are not among the thirteen we carry.
-- 7 tests. The hosted validator by hand: pending, to be recorded in the README.
+- 8 tests, one behind a `network` marker that CI skips.
 - Decisions 1 to 7 as written, with Tim's "publisher as the access body" and the proposed numbers. Changed while
   building: the schema's `dct:conformsTo` moves from the Dataset to the Distribution (the Dataset's is closed to the
   Technical Standard NAL); coding systems are typed `dct:Standard` as well; column names are the leaf's path (unique)

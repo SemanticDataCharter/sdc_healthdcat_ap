@@ -34,3 +34,6 @@ where = ["src"]
 
 [tool.setuptools.package-data]
 sdchealthdcatap = ["data/*.yaml"]
+
+[tool.pytest.ini_options]
+markers = ["network: reaches the Interoperability Test Bed over the network; CI skips it"]

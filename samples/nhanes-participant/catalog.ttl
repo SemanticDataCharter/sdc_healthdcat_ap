@@ -16,101 +16,6 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semanticdatacharter.com/catalogs/governed-health-data-records> a dcat:Catalog ;
-    dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj> ;
-    dct:description "Collections of Governed Data Records, one per published Semantic Data Charter model, each described by the immutable schema its records conform to, for the HealthData@EU catalogue."@en ;
-    dct:issued "2026-09-26"^^xsd:date ;
-    dct:language <http://publications.europa.eu/resource/authority/language/ENG> ;
-    dct:modified "2026-09-26"^^xsd:date ;
-    dct:publisher <https://axius-sdc.com> ;
-    dct:title "Semantic Data Charter governed health data records"@en ;
-    dcat:dataset <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g> ;
-    dcat:themeTaxonomy <http://publications.europa.eu/resource/authority/data-theme> ;
-    foaf:homepage <https://semanticdatacharter.com> .
-
-<http://publications.europa.eu/resource/authority/access-right> a skos:ConceptScheme ;
-    dct:title "Access Rights Named Authority List"@en .
-
-<http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC> a dct:RightsStatement,
-        skos:Concept ;
-    skos:inScheme <http://publications.europa.eu/resource/authority/access-right> ;
-    skos:prefLabel "Non Public"@en .
-
-<http://publications.europa.eu/resource/authority/data-theme/HEAL> a skos:Concept ;
-    skos:inScheme <http://publications.europa.eu/resource/authority/data-theme> ;
-    skos:prefLabel "Health"@en .
-
-<http://publications.europa.eu/resource/authority/dataset-type> a skos:ConceptScheme ;
-    dct:title "Dataset Type Named Authority List"@en .
-
-<http://publications.europa.eu/resource/authority/dataset-type/STATISTICAL> a skos:Concept ;
-    skos:inScheme <http://publications.europa.eu/resource/authority/dataset-type> ;
-    skos:prefLabel "Statistical data"@en .
-
-<http://publications.europa.eu/resource/authority/file-type> a skos:ConceptScheme ;
-    dct:title "File Type Named Authority List"@en .
-
-<http://publications.europa.eu/resource/authority/file-type/XML> a dct:MediaTypeOrExtent ;
-    skos:inScheme <http://publications.europa.eu/resource/authority/file-type> .
-
-<http://publications.europa.eu/resource/authority/language> a skos:ConceptScheme ;
-    dct:title "Languages Named Authority List"@en .
-
-<http://publications.europa.eu/resource/authority/planned-availability> a skos:ConceptScheme ;
-    dct:title "Planned Availability Named Authority List"@en .
-
-<http://publications.europa.eu/resource/authority/planned-availability/AVAILABLE> a skos:Concept ;
-    skos:inScheme <http://publications.europa.eu/resource/authority/planned-availability> ;
-    skos:prefLabel "Available"@en .
-
-<https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system/LOINC> a dct:Standard,
-        skos:Concept ;
-    skos:inScheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system> ;
-    skos:prefLabel "LOINC"@en .
-
-<https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system/NCIT> a dct:Standard,
-        skos:Concept ;
-    skos:inScheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system> ;
-    skos:prefLabel "NCI Thesaurus"@en .
-
-<https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system/SNOMED-CT> a dct:Standard,
-        skos:Concept ;
-    skos:inScheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system> ;
-    skos:prefLabel "SNOMED CT"@en .
-
-<https://hdeu-dcat.data.health.europa.eu/resource/authority/health-theme> a skos:ConceptScheme ;
-    dct:title "Health Theme NAL"@en .
-
-<https://hdeu-dcat.data.health.europa.eu/resource/authority/health-theme/NONCOMMUNICABLE_DISEASES> a skos:Concept ;
-    skos:inScheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/health-theme> ;
-    skos:prefLabel "Noncommunicable diseases, metabolic & cardiopulmonary"@en .
-
-<https://hdeu-dcat.data.health.europa.eu/resource/authority/healthcategories> a skos:ConceptScheme ;
-    dct:title "Health Categories (EHDS Art. 51) NAL"@en .
-
-<https://hdeu-dcat.data.health.europa.eu/resource/authority/healthcategories/RQSH> a skos:Concept ;
-    skos:inScheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/healthcategories> ;
-    skos:prefLabel "Data from research cohorts, questionnaires and surveys related to health"@en .
-
-<https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type> a skos:ConceptScheme ;
-    dct:title "Health Publisher Types NAL"@en .
-
-<https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type/private-company> a skos:Concept ;
-    skos:inScheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type> ;
-    skos:prefLabel "Private company"@en .
-
-<https://sdcstudio.axius-sdc.com/api/v1/catalog/dm/xy8upneajsb8vdcmnve01g6g/> a foaf:Document ;
-    dct:title "NHANES Participant in the public catalog"@en .
-
-<https://sdcstudio.axius-sdc.com/dmlib/dm-xy8upneajsb8vdcmnve01g6g.xsd> a foaf:Document ;
-    dct:conformsTo <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd> ;
-    dct:description "The immutable schema every NHANES Participant record is validated against: 153 variables with their definitions, datatypes, units, enumerated values and codes, and the sixteen typed reasons a value may be missing. Current version SHA-256 0df45878b0db1c1515e860a4b9993c5f086ffaaebc4c16aaae2092e1da3d3b3b."@en ;
-    dct:format <http://publications.europa.eu/resource/authority/file-type/XML> ;
-    dct:title "SDC4 schema dm-xy8upneajsb8vdcmnve01g6g: the data dictionary of NHANES Participant"@en .
-
-<https://semanticdatacharter.com> a foaf:Document ;
-    dct:title "Semantic Data Charter governed health data records"@en .
-
 <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g> a dcat:Dataset ;
     geodcatap:custodian <https://axius-sdc.com> ;
     dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj> ;
@@ -167,6 +72,93 @@
         <https://w3id.org/dpv/dpv-pd#HealthRecord> ;
     dpv:hasPurpose [ a dpv:Purpose ;
             dct:description "Demonstration of governed data records for secondary-use research on population health, blood pressure, laboratory results and health behaviour."@en ] .
+
+<http://publications.europa.eu/resource/authority/access-right> a skos:ConceptScheme ;
+    dct:title "Access Rights Named Authority List"@en .
+
+<http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC> a dct:RightsStatement,
+        skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/access-right> ;
+    skos:prefLabel "Non Public"@en .
+
+<http://publications.europa.eu/resource/authority/data-theme> a skos:ConceptScheme ;
+    dct:title "Data Theme Named Authority List"@en,
+        "EU Vocabularies Data Theme"@en .
+
+<http://publications.europa.eu/resource/authority/data-theme/HEAL> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/data-theme> ;
+    skos:prefLabel "Health"@en .
+
+<http://publications.europa.eu/resource/authority/dataset-type> a skos:ConceptScheme ;
+    dct:title "Dataset Type Named Authority List"@en .
+
+<http://publications.europa.eu/resource/authority/dataset-type/STATISTICAL> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/dataset-type> ;
+    skos:prefLabel "Statistical data"@en .
+
+<http://publications.europa.eu/resource/authority/file-type> a skos:ConceptScheme ;
+    dct:title "File Type Named Authority List"@en .
+
+<http://publications.europa.eu/resource/authority/file-type/XML> a dct:MediaTypeOrExtent ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/file-type> .
+
+<http://publications.europa.eu/resource/authority/language> a skos:ConceptScheme ;
+    dct:title "Languages Named Authority List"@en .
+
+<http://publications.europa.eu/resource/authority/language/ENG> a dct:LinguisticSystem ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> .
+
+<http://publications.europa.eu/resource/authority/planned-availability> a skos:ConceptScheme ;
+    dct:title "Planned Availability Named Authority List"@en .
+
+<http://publications.europa.eu/resource/authority/planned-availability/AVAILABLE> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/planned-availability> ;
+    skos:prefLabel "Available"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system/LOINC> a dct:Standard,
+        skos:Concept ;
+    skos:inScheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system> ;
+    skos:prefLabel "LOINC"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system/NCIT> a dct:Standard,
+        skos:Concept ;
+    skos:inScheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system> ;
+    skos:prefLabel "NCI Thesaurus"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system/SNOMED-CT> a dct:Standard,
+        skos:Concept ;
+    skos:inScheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system> ;
+    skos:prefLabel "SNOMED CT"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/health-theme> a skos:ConceptScheme ;
+    dct:title "Health Theme NAL"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/health-theme/NONCOMMUNICABLE_DISEASES> a skos:Concept ;
+    skos:inScheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/health-theme> ;
+    skos:prefLabel "Noncommunicable diseases, metabolic & cardiopulmonary"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/healthcategories> a skos:ConceptScheme ;
+    dct:title "Health Categories (EHDS Art. 51) NAL"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/healthcategories/RQSH> a skos:Concept ;
+    skos:inScheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/healthcategories> ;
+    skos:prefLabel "Data from research cohorts, questionnaires and surveys related to health"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type> a skos:ConceptScheme ;
+    dct:title "Health Publisher Types NAL"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type/private-company> a skos:Concept ;
+    skos:inScheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type> ;
+    skos:prefLabel "Private company"@en .
+
+<https://sdcstudio.axius-sdc.com/api/v1/catalog/dm/xy8upneajsb8vdcmnve01g6g/> a foaf:Document ;
+    dct:title "NHANES Participant in the public catalog"@en .
+
+<https://sdcstudio.axius-sdc.com/dmlib/dm-xy8upneajsb8vdcmnve01g6g.xsd> a foaf:Document ;
+    dct:conformsTo <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd> ;
+    dct:description "The immutable schema every NHANES Participant record is validated against: 153 variables with their definitions, datatypes, units, enumerated values and codes, and the sixteen typed reasons a value may be missing. Current version SHA-256 0df45878b0db1c1515e860a4b9993c5f086ffaaebc4c16aaae2092e1da3d3b3b."@en ;
+    dct:format <http://publications.europa.eu/resource/authority/file-type/XML> ;
+    dct:title "SDC4 schema dm-xy8upneajsb8vdcmnve01g6g: the data dictionary of NHANES Participant"@en .
 
 <https://semanticdatacharter.com/ns/sdc4/dm-xy8upneajsb8vdcmnve01g6g#column/audit-event/audit-agent-reference> a csvw:Column ;
     dct:description "The acting agent (FHIR AuditEvent.agent.who). Holds the IRI of the referenced thing."@en ;
@@ -1573,13 +1565,6 @@
 <https://w3id.org/dpv/dpv-pd#HealthRecord> a dpv:PersonalData .
 
 <http://creativecommons.org/licenses/by/3.0/> a dct:LicenseDocument .
-
-<http://publications.europa.eu/resource/authority/data-theme> a skos:ConceptScheme ;
-    dct:title "Data Theme Named Authority List"@en,
-        "EU Vocabularies Data Theme"@en .
-
-<http://publications.europa.eu/resource/authority/language/ENG> a dct:LinguisticSystem ;
-    skos:inScheme <http://publications.europa.eu/resource/authority/language> .
 
 <http://data.europa.eu/eli/reg/2025/327/oj> a eli:LegalResource .
 
