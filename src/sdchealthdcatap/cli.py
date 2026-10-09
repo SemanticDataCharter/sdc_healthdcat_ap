@@ -11,8 +11,8 @@ from datetime import date
 from pathlib import Path
 
 from .healthdcatap import DeclaredInputError, build_health_catalog, load_declared
-from .model import read_model
-from .package import DEFAULT_HOST, PackageError, fetch_package, load_package
+from sdcreader import read_model
+from sdcreader import DEFAULT_HOST, PackageError, fetch_package, load_package
 
 
 def main(argv=None) -> int:

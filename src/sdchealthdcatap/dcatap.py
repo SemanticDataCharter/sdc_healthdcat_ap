@@ -17,7 +17,7 @@ import yaml
 from rdflib import BNode, Graph, Literal, Namespace, URIRef
 from rdflib.namespace import DCAT, DCTERMS, FOAF, PROV, RDF, RDFS, SKOS, XSD
 
-from .model import Model
+from sdcreader import Model
 
 VCARD = Namespace("http://www.w3.org/2006/vcard/ns#")
 ADMS = Namespace("http://www.w3.org/ns/adms#")

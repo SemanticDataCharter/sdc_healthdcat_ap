@@ -163,9 +163,12 @@ describe how the artifacts behave, so the next implementer spends the day on the
 
 ## Layout
 
-- `src/sdchealthdcatap/`: `package.py`, `model.py` and `dcatap.py` (reused from `sdc_cdif` and `sdc_dcat3_ap`),
-  `healthdcatap.py` (the health layer and the table group), `validate.py` (the validator's shape set with pySHACL),
-  `cli.py`, `data/catalog.yaml` (the declared input for the sample).
+- The model's package is read with [`sdcreader`](https://github.com/SemanticDataCharter/sdcreader) (`load_package`,
+  `fetch_package`, `read_model`): the record tree, its leaves, the enumerated values with their codes, the model's
+  Dublin Core with SDCStudio's defaults as unset. The package format is documented there, once.
+- `src/sdchealthdcatap/`: `dcatap.py` (the DCAT-AP graph builder, reused from `sdc_dcat3_ap`), `healthdcatap.py` (the
+  health layer and the table group), `validate.py` (the validator's shape set with pySHACL), `cli.py`, `data/catalog.yaml`
+  (the declared input for the sample).
 - `data/healthdcat-ap-r8-cd7841f/`: the release's shapes, context, validator configuration with the vocabularies the
   shapes name, and examples, at the pin.
 - `samples/nhanes-participant/`: the model's package as fetched and the catalog written from it, in Turtle and JSON-LD.

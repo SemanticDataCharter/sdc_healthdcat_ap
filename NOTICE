@@ -10,3 +10,5 @@ the examples in data/ are copied from https://code.europa.eu/healthdataeu/health
 CC BY 4.0, and keep that licence here; SEMIC's DCAT-AP 3.0.1 shapes among them are © European Union, CC BY 4.0. The
 sdccdif package loader and model reader and the sdcdcatap graph builder are reused from
 https://github.com/SemanticDataCharter/sdc_cdif and https://github.com/SemanticDataCharter/sdc_dcat3_ap.
+The model's package is read with sdcreader (https://github.com/SemanticDataCharter/sdcreader), Apache-2.0, and the
+DCAT-AP graph builder is reused from https://github.com/SemanticDataCharter/sdc_dcat3_ap.
