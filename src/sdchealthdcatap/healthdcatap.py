@@ -15,7 +15,7 @@ from rdflib import BNode, Graph, Literal, Namespace, URIRef
 from rdflib.namespace import DCAT, DCTERMS, FOAF, RDF, SKOS, XSD
 
 from .dcatap import DCATAP, DeclaredInputError, build_catalog, load_declared as _load_declared
-from .model import EXACT, CLOSE, IDENTIFIER, Model
+from sdcreader import EXACT, CLOSE, IDENTIFIER, Model
 
 HEALTH = Namespace("http://healthdataportal.eu/ns/health#")
 CV = Namespace("http://data.europa.eu/m8g/")

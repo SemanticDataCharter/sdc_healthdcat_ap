@@ -5,9 +5,8 @@ extension, its variables as a CSVW table group built from the record's leaves, i
 bindings, and the data holder's facts from declared input. Validated with the HealthData@EU validator's own shape set
 for the level, at a pinned commit.
 """
-from .package import ModelPackage, load_package, fetch_package
-from .model import read_model
+from sdcreader import ModelPackage, load_package, fetch_package, read_model
 from .healthdcatap import build_health_catalog, load_declared, DeclaredInputError
 
-__version__ = "0.1.0"
+__version__ = "4.0.0"
 __all__ = ["ModelPackage", "load_package", "fetch_package", "read_model", "build_health_catalog", "load_declared", "DeclaredInputError", "__version__"]
