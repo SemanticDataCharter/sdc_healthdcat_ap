@@ -1,0 +1,9 @@
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix dpv: <https://w3c.github.io/dpv/2.1/dpv/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<https://fair.healthdata.be/dataset/d43a158e-7d13-4660-bbc3-9d3f8d5501e5>
+    dpv:hasPurpose [
+        a dpv:Purpose;
+        dct:description "The primary objective of Sciensano's LINK-VACC project is to monitor COVID-19 vaccines post-authorization and evaluate the public health value of prioritising vaccination for people with comorbidities. This involves assessing the vaccines' effectiveness and safety in the broader population context, beyond the limited scope of clinical trials, and determining future vaccination policies in public health emergencies such as epidemics or pandemics"@en
+    ] .

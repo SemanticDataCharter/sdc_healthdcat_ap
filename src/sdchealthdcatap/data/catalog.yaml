@@ -1,0 +1,57 @@
+# Declared input: what the data holder states, because HealthDCAT-AP asks for facts only a holder has and for values
+# from the DG SANTE and EU Named Authority Lists. Override by editing a copy (--catalog FILE) or with --contact-name and
+# --contact-email. The writer refuses an empty contact e-mail rather than inventing one. Everything here is for the
+# sample (NHANES Participant, FAIR Data Demo); a data holder replaces it.
+contact:
+  name: Axius SDC, Inc. HealthDCAT-AP contact
+  email: contact@axius-sdc.com
+  page: https://axius-sdc.com
+catalog:
+  id: https://semanticdatacharter.com/catalogs/governed-health-data-records
+  title: Semantic Data Charter governed health data records
+  description: Collections of Governed Data Records, one per published Semantic Data Charter model, each described by the immutable schema its records conform to, for the HealthData@EU catalogue.
+  homepage: https://semanticdatacharter.com
+publisher:
+  name: Axius SDC, Inc.
+  id: https://axius-sdc.com
+  type: https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type/private-company   # Health Publisher Types NAL
+  type_label: Private company
+# The access level selects the validator's shape set. The records are not published; non-public is the EHDS case for
+# health data reached through a permit.
+access_level: NON_PUBLIC
+access_rights: http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC
+applicable_legislation: http://data.europa.eu/eli/reg/2025/327/oj      # the EHDS Regulation, as the profile's usage note recommends
+# There is no EU health data access body for this dataset; the publisher is the body that grants access, and says so.
+hdab: publisher
+custodian: publisher
+theme_taxonomy: http://publications.europa.eu/resource/authority/data-theme
+theme_taxonomy_label: EU Vocabularies Data Theme
+theme: http://publications.europa.eu/resource/authority/data-theme/HEAL
+theme_label: Health
+language: http://publications.europa.eu/resource/authority/language/ENG
+schema_format: http://publications.europa.eu/resource/authority/file-type/XML
+dataset_type: http://publications.europa.eu/resource/authority/dataset-type/STATISTICAL
+dataset_type_label: Statistical data
+health_category: https://hdeu-dcat.data.health.europa.eu/resource/authority/healthcategories/RQSH
+health_category_label: Data from research cohorts, questionnaires and surveys related to health
+health_theme: https://hdeu-dcat.data.health.europa.eu/resource/authority/health-theme/NONCOMMUNICABLE_DISEASES
+health_theme_label: Noncommunicable diseases, metabolic & cardiopulmonary
+# The distribution that is the access route (mandatory at every level; for non-public data, the route to the access body)
+distribution:
+  title: Access to the records through the data holder
+  description: The records are not published. Access is by request to the contact point; each record is validated against the immutable schema this catalog cites.
+  access_url: https://axius-sdc.com
+  availability: http://publications.europa.eu/resource/authority/planned-availability/AVAILABLE
+  availability_label: Available
+# Facts about the collection (the FAIR Data Demo's generation run, 9,254 NHANES Participant records, one per participant)
+number_of_records: 9254
+number_of_unique_individuals: 9254
+min_typical_age: 0
+max_typical_age: 80
+population_coverage: Participants of the National Health and Nutrition Examination Survey 2017-2018 (CDC), civilian noninstitutionalized population of the United States, all ages.
+personal_data:
+  - https://w3id.org/dpv/dpv-pd#Age
+  - https://w3id.org/dpv/dpv-pd#Gender
+  - https://w3id.org/dpv/dpv-pd#HealthRecord
+legal_basis: Public-use survey data released by the CDC National Center for Health Statistics, re-expressed as governed data records by the FAIR Data Demo; secondary use under the terms of the source release.
+purpose: Demonstration of governed data records for secondary-use research on population health, blood pressure, laboratory results and health behaviour.

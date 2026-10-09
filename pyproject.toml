@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sdchealthdcatap"
+version = "0.1.0"
+description = "Describe published Semantic Data Charter models' governed data records in a HealthDCAT-AP (Release 8) catalog."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Axius SDC, Inc." }]
+keywords = ["healthdcat-ap", "dcat-ap", "ehds", "healthdata-eu", "sdc", "fair"]
+
+dependencies = [
+    "lxml>=5.0",
+    "pyyaml>=6.0",
+    "rdflib>=7.0",
+]
+
+[project.optional-dependencies]
+fetch = ["requests>=2.31"]
+# The tests run the HealthData@EU validator's own shape set from the pinned snapshot in data/ with pySHACL.
+dev = ["pytest>=8.0", "requests>=2.31", "pyshacl>=0.26"]
+
+[project.scripts]
+sdchealthdcatap = "sdchealthdcatap.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/SemanticDataCharter/sdc_healthdcat_ap"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+sdchealthdcatap = ["data/*.yaml"]
+
+[tool.pytest.ini_options]
+markers = ["network: reaches the Interoperability Test Bed over the network; CI skips it"]

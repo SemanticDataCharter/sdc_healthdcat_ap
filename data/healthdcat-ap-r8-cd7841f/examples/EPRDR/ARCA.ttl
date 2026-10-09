@@ -1,0 +1,452 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix cv: <http://data.europa.eu/m8g/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geodcatap: <http://data.europa.eu/930/> .
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix arca: <https://eu-rd-platform.jrc.ec.europa.eu/mdr/detail/ARCA/> .
+
+# =============================================================================
+# ARCA Registry - HealthDCAT-AP Release 8 compliant description
+# Source: https://eu-rd-platform.jrc.ec.europa.eu/mdr/detail/ARCA
+# ERDRI.dor: https://eu-rd-platform.jrc.ec.europa.eu/erdridor/register/4876
+# =============================================================================
+
+# --- Publisher (JRC) ---
+arca:publisher-jrc
+    a foaf:Agent ;
+    foaf:name "Union body"@en ;
+    dct:type <https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type/administrative-institution> ;
+    cv:contactPoint arca:publisher-contact-point .
+
+arca:publisher-contact-point
+    a cv:ContactPoint ;
+    cv:email "union_body@europa.eu" ;
+    cv:contactPage <https://european-union.europa.eu/> .
+
+# --- Health Data Access Body ---
+arca:hdab-agent
+    a foaf:Agent ;
+    foaf:name "Union body"@en ;
+    dct:type <https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type/administrative-institution> ;
+    cv:contactPoint arca:hdab-contact-point .
+
+arca:hdab-contact-point
+    a cv:ContactPoint ;
+    cv:email "union_body@europa.eu" ;
+    cv:contactPage <https://european-union.europa.eu/> .
+
+# --- Health Data Access Body Coordinator ---
+arca:hdab-coordinator-agent
+    a foaf:Agent ;
+    foaf:name "Union body"@en ;
+    dct:type <https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type/administrative-institution> ;
+    cv:contactPoint arca:hdab-coordinator-contact-point .
+
+arca:hdab-coordinator-contact-point
+    a cv:ContactPoint ;
+    cv:contactPage <https://european-union.europa.eu/> .
+
+# --- Custodian (Data Holder) ---
+arca:custodian-agent
+    a foaf:Agent ;
+    foaf:name "University of Tübingen - German Center for Neurodegenerative Diseases (DZNE)"@en ;
+    dct:type <https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type/research-institute-org> ;
+    cv:contactPoint arca:custodian-contact-point .
+
+arca:custodian-contact-point
+    a cv:ContactPoint ;
+    cv:contactPage <https://www.dzne.de/en/> .
+
+# --- Dataset: ARCA ---
+<https://eu-rd-platform.jrc.ec.europa.eu/mdr/detail/ARCA>
+    a dcat:Dataset ;
+    dct:title "[Test] ARCA"@en ;
+    dct:description "Disease registry for autosomal-recessive cerebellar ataxias (ARCAs), capturing genetic diagnosis, multisystemic disease phenotypes and longitudinal disease progression with clinician-reported outcomes and scales as well as patient-reported outcomes. The ARCA registry is GCP- and GDPR-conform, and implements core data elements required by ERDRI and the EMA. This registry contains 17 variables."@en ;
+    dct:identifier "ARCA" ;
+    adms:identifier [
+        a adms:Identifier ;
+        skos:notation "4876" ;
+        adms:schemaAgency "ERDRI.dor"
+    ] ;
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+    dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj> ;
+    dct:type <http://publications.europa.eu/resource/authority/dataset-type/STATISTICAL> ;
+    dct:language <http://publications.europa.eu/resource/authority/language/ENG> ;
+    dct:publisher arca:publisher-jrc ;
+    geodcatap:custodian arca:custodian-agent ;
+    healthdcatap:hdab arca:hdab-agent ;
+    healthdcatap:hdabCoordinator arca:hdab-coordinator-agent ;
+    dcat:theme <http://publications.europa.eu/resource/authority/data-theme/HEAL> ;
+    dcat:keyword "rare disease"@en, "autosomal recessive cerebellar ataxia"@en, "patient registry"@en, "ARCA"@en, "neurodegenerative disease"@en, "ataxia"@en, "neurology"@en ;
+    healthdcatap:hasCodeValues "ORPHA:284289" ;
+    healthdcatap:hasCodingSystem <https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system/ORPHACODE> ;
+    healthdcatap:healthCategory <https://hdeu-dcat.data.health.europa.eu/resource/authority/healthcategories/MRMR> ;
+    healthdcatap:healthTheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/health-theme/NONCOMMUNICABLE_DISEASES> ;
+    dcat:contactPoint arca:dataset-contact-point ;
+    dcat:landingPage <https://european-union.europa.eu/> ;
+    foaf:page <https://eu-rd-platform.jrc.ec.europa.eu/erdridor/register/4876> ,
+        <http://www.arca-registry.org> ;
+    dct:spatial <http://publications.europa.eu/resource/authority/country/DEU> ;
+    dct:provenance arca:provenance ;
+    healthdcatap:hasStructuredData true ;
+    healthdcatap:hasVariables arca:variables-group ;
+    healthdcatap:populationCoverage "Patients diagnosed with autosomal-recessive cerebellar ataxias (ARCAs) from over 15 countries and 30 sites globally, with longitudinal clinical follow-up."@en ;
+    dcat:distribution arca:distribution-hdab ;
+    dpv:hasPurpose arca:purpose ;
+    dpv:hasLegalBasis [
+        a dpv:LegalBasis ;
+        dct:description "Processing is based on the EHDS Regulation (EU) 2025/327 for secondary use of health data, and applicable national legislation in Germany governing clinical registry research. The registry is GCP- and GDPR-conform."@en
+    ] ;
+    dpv:hasPersonalData <https://w3id.org/dpv/dpv-pd#Gender>, <https://w3id.org/dpv/dpv-pd#Age>, <https://w3id.org/dpv/dpv-pd#HealthRecord>, <https://w3id.org/dpv/dpv-pd#Genetic> ;
+    healthdcatap:minTypicalAge "5"^^xsd:nonNegativeInteger ;
+    healthdcatap:maxTypicalAge "75"^^xsd:nonNegativeInteger ;
+    healthdcatap:numberOfRecords "1300"^^xsd:nonNegativeInteger ;
+    healthdcatap:numberOfUniqueIndividuals "1300"^^xsd:nonNegativeInteger ;
+    healthdcatap:retentionPeriod [
+        a dct:PeriodOfTime ;
+        dcat:startDate "2015-01-01"^^xsd:date ;
+        dcat:endDate "2035-12-31"^^xsd:date
+    ] ;
+    adms:sample arca:sample-distribution ;
+    healthdcatap:analytics arca:analytics-distribution ;
+    dqv:hasQualityAnnotation [
+        a dqv:QualityCertificate ;
+        oa:motivatedBy dqv:qualityAssessment ;
+        oa:hasBody <https://eu-rd-platform.jrc.ec.europa.eu/mdr/detail/ARCA>
+    ] ;
+    prov:wasGeneratedBy arca:generation-activity .
+
+# --- Dataset Contact Point ---
+arca:dataset-contact-point
+    a vcard:Kind ;
+    vcard:hasURL <https://european-union.europa.eu/> ;
+    vcard:hasEmail <mailto:union_body@europa.eu> .
+
+# --- Provenance ---
+arca:provenance
+    a dct:ProvenanceStatement ;
+    rdfs:label "Data is collected from patients with autosomal-recessive cerebellar ataxias at participating university hospital specialist centers across multiple countries. Clinician-reported outcomes, disease scales, genetic diagnoses and patient-reported outcomes are captured longitudinally. The registry is a member of the European Reference Network for Rare Neurological Diseases (ERN-RND)."@en .
+
+# --- Purpose ---
+arca:purpose
+    a dpv:Purpose ;
+    dct:description "Secondary-use research to advance trial readiness for autosomal-recessive cerebellar ataxias, including natural history characterization, genotype-phenotype correlation, biomarker identification, and clinical trial planning."@en .
+
+# --- Generation Activity ---
+arca:generation-activity
+    a prov:Activity ;
+    rdfs:label "Patient registry data collection through clinical encounters at specialized ataxia centers"@en ;
+    dct:type <https://hdeu-dcat.data.health.europa.eu/resource/authority/health-activity/ROUTINE_RECORDS> .
+
+# --- Distribution (HDAB access) ---
+arca:distribution-hdab
+    a dcat:Distribution ;
+    dct:title "ARCA Registry Data Access via HDAB"@en ;
+    dct:description "Access to the ARCA registry data is provided through the EU RD Platform Health Data Access Body. Access is conditional on approval of a data request application."@en ;
+    dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj> ;
+    dcat:accessURL <https://eu-rd-platform.jrc.ec.europa.eu/erdridor/register/4876> ;
+    dct:format <http://publications.europa.eu/resource/authority/file-type/HTML> ;
+    dcatap:availability <http://publications.europa.eu/resource/authority/planned-availability/AVAILABLE> ;
+    dct:license <http://publications.europa.eu/resource/authority/licence/CC_BY_4_0> ;
+    dct:rights [
+        a dct:RightsStatement ;
+        rdfs:label "Access to data is conditional on the issuance of a permit by the HDAB after submission of a data request application."@en
+    ] .
+
+# --- Sample Distribution ---
+arca:sample-distribution
+    a dcat:Distribution ;
+    dct:title "ARCA Registry Sample Data"@en ;
+    dct:description "Synthetic sample data representing the structure of the ARCA registry variables."@en ;
+    dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj> ;
+    dcat:accessURL <https://eu-rd-platform.jrc.ec.europa.eu/erdridor/register/4876> ;
+    dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
+    dcatap:availability <http://publications.europa.eu/resource/authority/planned-availability/AVAILABLE> ;
+    dct:license <http://publications.europa.eu/resource/authority/licence/CC_BY_4_0> ;
+    adms:status <http://publications.europa.eu/resource/authority/distribution-status/COMPLETED> .
+
+# --- Analytics Distribution ---
+arca:analytics-distribution
+    a dcat:Distribution ;
+    dct:title "ARCA Registry Analytics Report"@en ;
+    dct:description "Summary statistics and data quality report for the ARCA registry."@en ;
+    dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj> ;
+    dcat:accessURL <https://eu-rd-platform.jrc.ec.europa.eu/erdridor/register/4876> ;
+    dct:format <http://publications.europa.eu/resource/authority/file-type/HTML> ;
+    dcatap:availability <http://publications.europa.eu/resource/authority/planned-availability/AVAILABLE> ;
+    dct:license <http://publications.europa.eu/resource/authority/licence/CC_BY_4_0> .
+
+# =============================================================================
+# ARCA VARIABLES (17 variables) - CSVW model per HealthDCAT-AP Section 7.14
+# Source: https://eu-rd-platform.jrc.ec.europa.eu/mdr/detail/ARCA
+# =============================================================================
+
+# --- CSVW TableGroup ---
+arca:variables-group
+    a csvw:TableGroup ;
+    dct:title "ARCA Registry"@en ;
+    csvw:table arca:table-identification ,
+        arca:table-demographics ,
+        arca:table-patient-status ,
+        arca:table-first-diagnosis ,
+        arca:table-disease-diagnosis ,
+        arca:table-genetic-diagnosis ,
+        arca:table-research ,
+        arca:table-disability .
+
+# --- Table 1: Patient identification (1 variable) ---
+arca:table-identification
+    a csvw:Table ;
+    dct:title "Patient identification"@en ;
+    dcat:keyword "identification"@en, "subject"@en ;
+    csvw:column arca:col-subjid .
+
+arca:col-subjid a csvw:Column ;
+    csvw:name "subjid" ;
+    csvw:title "Subject ID"@en ;
+    csvw:datatype "string" ;
+    dct:description "Unique subject identifier for the patient."@en .
+
+# --- Table 2: Patient demographic information (2 variables) ---
+arca:table-demographics
+    a csvw:Table ;
+    dct:title "Patient demographic information"@en ;
+    dcat:keyword "demographics"@en, "patient identification"@en ;
+    csvw:column arca:col-yob, arca:col-sex .
+
+arca:col-yob a csvw:Column ;
+    csvw:name "yob" ;
+    csvw:title "Date of birth (year)"@en ;
+    csvw:datatype "date" ;
+    dct:description "Patient's date of birth (year)."@en .
+
+arca:col-sex a csvw:Column ;
+    csvw:name "sex" ;
+    csvw:title "Sex"@en ;
+    csvw:datatype "integer" ;
+    dct:description "Patient's sex."@en .
+
+# --- Table 3: Patient status (2 variables) ---
+arca:table-patient-status
+    a csvw:Table ;
+    dct:title "Patient status"@en ;
+    dcat:keyword "status"@en, "vital status"@en ;
+    csvw:column arca:col-subjstat, arca:col-death .
+
+arca:col-subjstat a csvw:Column ;
+    csvw:name "subjstat" ;
+    csvw:title "Patient status"@en ;
+    csvw:datatype "string" ;
+    dct:description "Patient's current status."@en .
+
+arca:col-death a csvw:Column ;
+    csvw:name "death" ;
+    csvw:title "Date of death"@en ;
+    csvw:datatype "date" ;
+    dct:description "Patient's date of death."@en .
+
+# --- Table 4: First diagnosis (1 variable) ---
+arca:table-first-diagnosis
+    a csvw:Table ;
+    dct:title "First diagnosis"@en ;
+    dcat:keyword "screening"@en, "first contact"@en ;
+    csvw:column arca:col-visdat-screening .
+
+arca:col-visdat-screening a csvw:Column ;
+    csvw:name "visdat_screening" ;
+    csvw:title "Visit date (screening)"@en ;
+    csvw:datatype "date" ;
+    dct:description "Date of first contact with specialist center (screening visit)."@en .
+
+# --- Table 5: Disease diagnosis (2 variables) ---
+arca:table-disease-diagnosis
+    a csvw:Table ;
+    dct:title "Disease diagnosis"@en ;
+    dcat:keyword "onset"@en, "diagnosis"@en ;
+    csvw:column arca:col-onset, arca:col-visdat .
+
+arca:col-onset a csvw:Column ;
+    csvw:name "onset" ;
+    csvw:title "Age at onset"@en ;
+    csvw:datatype "integer" ;
+    dct:description "Age at onset of ataxia symptoms."@en .
+
+arca:col-visdat a csvw:Column ;
+    csvw:name "visdat" ;
+    csvw:title "Visit date (diagnosis)"@en ;
+    csvw:datatype "date" ;
+    dct:description "Date at which diagnosis was made."@en .
+
+# --- Table 6: Genetic diagnosis (4 variables) ---
+arca:table-genetic-diagnosis
+    a csvw:Table ;
+    dct:title "Diagnosis"@en ;
+    dcat:keyword "genetics"@en, "genotype"@en, "allele"@en ;
+    csvw:column arca:col-gendiag, arca:col-allele1c, arca:col-allele2c, arca:col-diagconf .
+
+arca:col-gendiag a csvw:Column ;
+    csvw:name "gendiag" ;
+    csvw:title "Genetic diagnosis"@en ;
+    csvw:datatype "string" ;
+    dct:description "Genetic diagnosis of the rare disease retained by the specialist centre."@en .
+
+arca:col-allele1c a csvw:Column ;
+    csvw:name "allele1c" ;
+    csvw:title "Genetic diagnosis code type on allele 1"@en ;
+    csvw:datatype "string" ;
+    dct:description "Genotype of allele 1."@en .
+
+arca:col-allele2c a csvw:Column ;
+    csvw:name "allele2c" ;
+    csvw:title "Genetic diagnosis code type on allele 2"@en ;
+    csvw:datatype "string" ;
+    dct:description "Genotype of allele 2."@en .
+
+arca:col-diagconf a csvw:Column ;
+    csvw:name "diagconf" ;
+    csvw:title "Diagnosis confirmed"@en ;
+    csvw:datatype "boolean" ;
+    dct:description "Whether genetic diagnosis is confirmed."@en .
+
+# --- Table 7: Research (4 variables) ---
+arca:table-research
+    a csvw:Table ;
+    dct:title "Research"@en ;
+    dcat:keyword "research"@en, "consent"@en, "biobank"@en ;
+    csvw:column arca:col-iccontact02, arca:col-icdat06, arca:col-smpldat, arca:col-smplloc .
+
+arca:col-iccontact02 a csvw:Column ;
+    csvw:name "iccontact02" ;
+    csvw:title "Agreement to be contacted for research purposes"@en ;
+    csvw:datatype "boolean" ;
+    dct:description "Patient's permission to be contacted for research purposes."@en .
+
+arca:col-icdat06 a csvw:Column ;
+    csvw:name "icdat06" ;
+    csvw:title "Consent to data use for other research purposes"@en ;
+    csvw:datatype "boolean" ;
+    dct:description "Patient's consent for data to be reused for other research purposes."@en .
+
+arca:col-smpldat a csvw:Column ;
+    csvw:name "smpldat" ;
+    csvw:title "Sampling date"@en ;
+    csvw:datatype "date" ;
+    dct:description "Date of biological sample collection."@en .
+
+arca:col-smplloc a csvw:Column ;
+    csvw:name "smplloc" ;
+    csvw:title "Storage location"@en ;
+    csvw:datatype "integer" ;
+    dct:description "Biobank storage location for biological sample."@en .
+
+# --- Table 8: Disability (1 variable) ---
+arca:table-disability
+    a csvw:Table ;
+    dct:title "Disability"@en ;
+    dcat:keyword "disability"@en, "outcome"@en ;
+    csvw:column arca:col-implicit .
+
+arca:col-implicit a csvw:Column ;
+    csvw:name "implicit" ;
+    csvw:title "Disability information"@en ;
+    csvw:datatype "string" ;
+    dct:description "Information implicit to diagnosis of ataxia to be included in registry."@en .
+
+# =============================================================================
+# Type declarations for controlled vocabulary instances
+# =============================================================================
+
+<http://data.europa.eu/eli/reg/2025/327/oj>
+    a eli:LegalResource .
+
+<http://publications.europa.eu/resource/authority/access-right/PUBLIC>
+    a skos:Concept, dct:RightsStatement ;
+    skos:prefLabel "Public"@en .
+
+<http://publications.europa.eu/resource/authority/language/ENG>
+    a dct:LinguisticSystem .
+
+<http://publications.europa.eu/resource/authority/country/DEU>
+    a dct:Location ;
+    dcat:bbox "POLYGON((5.87 47.27, 15.04 47.27, 15.04 55.06, 5.87 55.06, 5.87 47.27))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ;
+    dcat:centroid "POINT(10.45 51.16)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
+
+<http://publications.europa.eu/resource/authority/data-theme/HEAL>
+    a skos:Concept ;
+    skos:prefLabel "Health"@en .
+
+<http://publications.europa.eu/resource/authority/dataset-type/STATISTICAL>
+    a skos:Concept ;
+    skos:prefLabel "Statistical"@en .
+
+<http://publications.europa.eu/resource/authority/file-type/HTML>
+    a dct:MediaTypeOrExtent .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/healthcategories/MRMR>
+    a skos:Concept ;
+    skos:prefLabel "Data from medical registries and mortality registries"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/health-theme/NONCOMMUNICABLE_DISEASES>
+    a skos:Concept ;
+    skos:prefLabel "Noncommunicable Diseases"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/health-activity/ROUTINE_RECORDS>
+    a skos:Concept ;
+    skos:prefLabel "Routine Records"@en .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type/research-institute-org>
+    a skos:Concept ;
+    skos:prefLabel "Research Institute or Organisation"@en .
+
+<https://eu-rd-platform.jrc.ec.europa.eu/erdridor/register/4876>
+    a foaf:Document .
+
+<https://european-union.europa.eu/>
+    a foaf:Document .
+
+<http://www.arca-registry.org>
+    a foaf:Document .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system/ORPHACODE>
+    a dct:Standard .
+
+<http://publications.europa.eu/resource/authority/planned-availability/AVAILABLE>
+    a skos:Concept ;
+    skos:prefLabel "Available"@en .
+
+<http://publications.europa.eu/resource/authority/licence/CC_BY_4_0>
+    a dct:LicenseDocument ;
+    dct:type <http://purl.org/adms/licencetype/Attribution> .
+
+<http://publications.europa.eu/resource/authority/distribution-status/COMPLETED>
+    a skos:Concept ;
+    skos:prefLabel "Completed"@en .
+
+<http://publications.europa.eu/resource/authority/file-type/CSV>
+    a dct:MediaTypeOrExtent .
+
+# --- Personal Data type declarations ---
+<https://w3id.org/dpv/dpv-pd#Gender>
+    a dpv:PersonalData .
+
+<https://w3id.org/dpv/dpv-pd#Age>
+    a dpv:PersonalData .
+
+<https://w3id.org/dpv/dpv-pd#HealthRecord>
+    a dpv:PersonalData .
+
+<https://w3id.org/dpv/dpv-pd#Genetic>
+    a dpv:PersonalData .

@@ -1,0 +1,12 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+<https://fair.healthdata.be/dataset/d43a158e-7d13-4660-bbc3-9d3f8d5501e5>
+	a dcat:Dataset ;
+    adms:identifier [ a adms:Identifier;
+        skos:notation "https://www.healthinformationportal.eu/health-information-sources/linking-registers-covid-19-vaccine-surveillance"^^xsd:anyURI ;
+        adms:schemaAgency "Health Information Portal"
+    ];

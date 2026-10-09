@@ -1,0 +1,5 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://fair.healthdata.be/dataset/d43a158e-7d13-4660-bbc3-9d3f8d5501e5>
+    dct:issued "2023-08-19T18:47:54Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .

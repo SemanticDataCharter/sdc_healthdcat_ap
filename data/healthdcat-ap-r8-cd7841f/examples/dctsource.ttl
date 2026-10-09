@@ -1,0 +1,7 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+<https://fair.healthdata.be/dataset/d43a158e-7d13-4660-bbc3-9d3f8d5501e5>
+	a dcat:Dataset ;
+    dct:source <https://fair.healthdata.be/dataset/e703dd1e-0bca-438d-a7cb-d3429dc6d118> .
+    # The source Dataset must be fully described	

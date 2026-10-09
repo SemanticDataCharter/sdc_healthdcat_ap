@@ -1,0 +1,7 @@
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix dpvpd: <https://w3id.org/dpv/dpv-pd#>.
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+<https://fair.healthdata.be/dataset/d43a158e-7d13-4660-bbc3-9d3f8d5501e5>
+	a dcat:Dataset ;
+    dpv:hasPersonalData dpvpd:Gender, dpvpd:Age .

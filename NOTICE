@@ -1,0 +1,12 @@
+sdchealthdcatap
+Copyright 2026 Axius SDC, Inc.
+
+Licensed under the Apache License, Version 2.0.
+
+This package's output follows HealthDCAT-AP, the health extension of DCAT-AP for the secondary use of health data under
+the European Health Data Space, developed under the EHDS2 pilot and maintained by DG SANTE for the HealthData@EU
+platform (https://data.health.europa.eu/healthdcat-ap/). The shapes, the validator configuration, the vocabularies and
+the examples in data/ are copied from https://code.europa.eu/healthdataeu/healthdcat-ap at a pinned commit, licensed
+CC BY 4.0, and keep that licence here; SEMIC's DCAT-AP 3.0.1 shapes among them are © European Union, CC BY 4.0. The
+sdccdif package loader and model reader and the sdcdcatap graph builder are reused from
+https://github.com/SemanticDataCharter/sdc_cdif and https://github.com/SemanticDataCharter/sdc_dcat3_ap.

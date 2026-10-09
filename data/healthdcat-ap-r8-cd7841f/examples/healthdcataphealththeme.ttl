@@ -1,0 +1,9 @@
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://fair.healthdata.be/dataset/d43a158e-7d13-4660-bbc3-9d3f8d5501e5>
+	a dcat:Dataset ;
+    healthdcatap:healthTheme <https://hdeu-dcat.data.health.europa.eu/resource/authority/health-theme/ANTIMICROBIAL_CONTROL> .
+	
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/health-theme/ANTIMICROBIAL_CONTROL> a skos:Concept .

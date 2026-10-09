@@ -1,0 +1,6 @@
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+<https://fair.healthdata.be/dataset/d43a158e-7d13-4660-bbc3-9d3f8d5501e5>
+	a dcat:Dataset ;
+    healthdcatap:numberOfRecords "750000"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .

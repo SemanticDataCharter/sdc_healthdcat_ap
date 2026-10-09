@@ -1,0 +1,9 @@
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<https://fair.healthdata.be/dataset/d43a158e-7d13-4660-bbc3-9d3f8d5501e5>
+    healthdcatap:hasCodingSystem <https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system/ICD-10> ,
+        <https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system/SNOMED-CT> .
+
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system/ICD-10> a dct:Standard .
+<https://hdeu-dcat.data.health.europa.eu/resource/authority/coding-system/SNOMED-CT> a dct:Standard .

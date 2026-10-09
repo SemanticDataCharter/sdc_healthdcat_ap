@@ -1,0 +1,15 @@
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<https://fair.healthdata.be/dataset/d43a158e-7d13-4660-bbc3-9d3f8d5501e5>
+	a dcat:Dataset ;
+    healthdcatap:analytics [
+        a dcat:Distribution;
+        dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2022/868/oj>;
+        dct:title "Technical report number of unique study subjects available by environment for project HDBP0250"@en;
+        dcat:accessURL <https://fair.healthdata.be/sites/default/files/distribution/d43a158e-7d13-4660-bbc3-9d3f8d5501e5/Technical_report_number_of_unique_study_subjects_available_by_environment_for_project_HDBP0250.csv> ;
+        dct:format <http://publications.europa.eu/resource/authority/file-type/CSV>;
+        dcat:mediaType <http://www.iana.org/assignments/media-types/text/csv>
+    ] .

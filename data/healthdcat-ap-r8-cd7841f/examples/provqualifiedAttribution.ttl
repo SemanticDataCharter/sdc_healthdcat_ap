@@ -1,0 +1,20 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+
+<https://fair.healthdata.be/dataset/d43a158e-7d13-4660-bbc3-9d3f8d5501e5>
+	a dcat:Dataset ;
+    prov:qualifiedAttribution [
+		a prov:Attribution;
+        dcat:hadRole <https://standards.iso.org/iso/19115/resources/Codelists/gml/CI_RoleCode.xml#processor>;       
+		prov:agent [
+			a foaf:Agent, foaf:Organization;                                
+			dct:type <https://hdeu-dcat.data.health.europa.eu/resource/authority/publisher-type/public-health-registry>;
+			foaf:name "Germany processor";
+			foaf:homepage <https://processor.com>;
+			foaf:mbox <mailto:processor@gmail.com>;
+		]
+    ] .
