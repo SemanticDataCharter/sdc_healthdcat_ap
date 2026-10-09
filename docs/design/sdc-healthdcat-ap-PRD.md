@@ -74,7 +74,7 @@ NALs, the EU NALs, DCAT, Dublin Core, FOAF, vCard, PROV, SPDX, CSVW, DQV, ELI, s
 **Sources, pinned 9 October 2026.** `code.europa.eu/healthdataeu/healthdcat-ap` at **cd7841f** (2026-09-18,
 "Release 8"; CC BY 4.0), `public/releases/release-8/`: `shacl/` (SEMIC's two files), `context/dcat-ap.jsonld` and
 `context/healthdcat-cardinality-rules.json`, `html/shacl/HealthDCAT-AP_validator/config/rdf-validator/ehds/` (the
-validator configuration, shapes and `catalogue/` background, about 7 MB), `html/examples/` (the per-property
+validator configuration and shapes, and from its `catalogue/` background the vocabularies and ontologies the shapes reference; the whole directory is 37 MB with an evidence PDF and ontologies the checks never touch, which stay out), `html/examples/` (the per-property
 examples and the EPRDR registry examples, Release 8 compliant). Cloned read-only into `source/` (gitignored);
 `build/snapshot_healthdcat_ap.py` verifies the pin and copies those into `data/healthdcat-ap-r8-cd7841f/`.
 
