@@ -1,5 +1,7 @@
 # sdc_healthdcat_ap
 
+<!-- mcp-name: io.github.SemanticDataCharter/sdchealthdcatap -->
+
 One Semantic Data Charter model, described in HealthDCAT-AP.
 
 `sdchealthdcatap` reads a published SDC model's package and writes the `dcat:Dataset` description that HealthDCAT-AP,
@@ -160,6 +162,18 @@ describe how the artifacts behave, so the next implementer spends the day on the
   three times (the blood pressure readings) gets three columns named by path.
 - **Release 8's `CHANGELOG.md` and root `shacl/` are DCAT-AP 3.0.1's**, unchanged; the HealthDCAT-AP shapes live
   only under the validator configuration path.
+
+## MCP server
+
+`sdchealthdcatap` is also an MCP server, registered as `io.github.SemanticDataCharter/sdchealthdcatap`, so an assistant that can read a
+published model with `sdcreader` can ask for its HealthDCAT-AP description. One tool, `write_catalog`, over the same
+function the CLI calls; stdio; read-only apart from the document it returns; no account; no tool takes a URL (the
+catalog host is fixed at start with `--host`). The protocol scaffold is `sdcreader.mcp`, shared by every SDC
+projection server.
+
+```
+uvx sdchealthdcatap mcp            # or: sdchealthdcatap-mcp, or sdchealthdcatap mcp
+```
 
 ## Layout
 

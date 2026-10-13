@@ -8,5 +8,5 @@ for the level, at a pinned commit.
 from sdcreader import ModelPackage, load_package, fetch_package, read_model
 from .healthdcatap import build_health_catalog, load_declared, DeclaredInputError
 
-__version__ = "4.0.1"
+__version__ = "4.1.0"
 __all__ = ["ModelPackage", "load_package", "fetch_package", "read_model", "build_health_catalog", "load_declared", "DeclaredInputError", "__version__"]
