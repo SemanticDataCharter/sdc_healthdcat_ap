@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sdchealthdcatap"
-version = "4.1.0"
+version = "4.1.1"
 description = "Describe published Semantic Data Charter models' governed data records in a HealthDCAT-AP (Release 8) catalog."
 readme = "README.md"
 requires-python = ">=3.10"
