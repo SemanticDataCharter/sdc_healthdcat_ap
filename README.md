@@ -175,6 +175,8 @@ projection server.
 uvx sdchealthdcatap mcp            # or: sdchealthdcatap-mcp, or sdchealthdcatap mcp
 ```
 
+Also listed on [mcprush](https://mcprush.com/semanticdatacharter/sdchealthdcatap-mcp).
+
 ## Layout
 
 - The model's package is read with [`sdcreader`](https://github.com/SemanticDataCharter/sdcreader) (`load_package`,
